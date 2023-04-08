@@ -15,32 +15,10 @@
 
 using namespace std;
 
-/*void load(){
-
-    (a mettre plus tard)
-}*/
-
-/*void deplacement(){
-
-
-}*/
-
-
-
-void AfficherConsole(int vie){
-
-    perso kais;
-
-
-    std::cout << "--------------------------------" << std::endl;
-    std::cout << "Nom du Joueur : " << kais.nom << std::endl;
-    std::cout << "Vie = " << vie << std::endl;
-}
-
 // fonction main de base
 int main(){
 
-    InitWindow(800,600, "Eat The Mushroom (DEBUG PROTOTYPE 1.0)");
+    InitWindow(800,600, "Eat The Mushroom (Release 2.0)");
 
     // load des fichiers / audios
 
@@ -135,6 +113,11 @@ int main(){
                     CloseWindow();
                     UnloadFont(fin2);
                     UnloadFont(fin);
+                    UnloadFont(font);
+                    UnloadTexture(mushroom);
+                    UnloadTexture(blackmushroom);
+                    UnloadTexture(player);
+                    CloseWindow();
                 }
 
             }
