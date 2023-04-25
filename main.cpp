@@ -17,7 +17,8 @@ using namespace std;
 
 // fonction main de base
 int main(){
-
+    SetTraceLogLevel(LOG_NONE);
+    SetTargetFPS(120);    
     InitWindow(800,600, "Eat The Mushroom (Release 2.0)");
 
     // load des fichiers / audios
