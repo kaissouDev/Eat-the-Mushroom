@@ -1,5 +1,5 @@
 /******************************************
-*   create by RAYLIB 4.5 || ZLIB license
+*   Create with RAYLIB 4.5 || ZLIB license
 *******************************************
 *   (c) Kaissou || All right reserved!
 *   Sous licence GPL2.0
