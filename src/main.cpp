@@ -1,8 +1,7 @@
 /******************************************
-*   Create with RAYLIB 4.5 || ZLIB license
+*         Eat The Mushroom 3.0
 *******************************************
 *   (c) Kaissou || All right reserved!
-*   Sous licence GPL2.0
 *   src/main.cpp
 *******************************************
 *               26/04/2023
