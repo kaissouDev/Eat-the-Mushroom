@@ -19,8 +19,7 @@ using namespace std;
 int main(){
     SetTraceLogLevel(LOG_NONE);
     SetTargetFPS(120);    
-    InitWindow(800,600, "Eat The Mushroom (Release 2.0)");
-
+    InitWindow(800,600, "Eat The Mushroom (Release 3.0 DEBUG)");
     // load des fichiers / audios
 
     
