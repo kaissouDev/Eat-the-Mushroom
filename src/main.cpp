@@ -1,16 +1,14 @@
 /******************************************
-*   create by RAYLIB 4.5 || ZLIB license
+*          Eat The Mushroom
+*             GPL V2
 *******************************************
 *   (c) Kaissou || All right reserved!
-*   main.cpp || main.hpp
-*   C++ project
+*              main.cpp
 *******************************************
-*       2023 || 25/04/2023
+*             25/04/2023
 *******************************************/
 
-
 #include "main.hpp"
-//#include "draw.hpp"
 
 using namespace std;
 
@@ -49,6 +47,9 @@ int main(){
     while(!WindowShouldClose()){
         BeginDrawing();
         SetTraceLogLevel(LOG_NONE);
+        // Ecran De Titre
+        
+
 
             // drawing element
             ClearBackground(BLUE);
@@ -103,7 +104,7 @@ int main(){
                 blackmushroom = LoadTexture("res/black.png");
                 
             }
-            
+
             if(vie == 13){
                 UnloadTexture(mushroom);
                 UnloadTexture(player);
