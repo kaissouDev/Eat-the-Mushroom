@@ -1,11 +1,3 @@
+#include <raylib.h>
 #include <iostream>
-#include <string>
-
-
-struct perso{
-
-    //int vie;
-    std::string nom = "kaissou";
-
-};
-
+#include <math.h>
