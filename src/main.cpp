@@ -46,7 +46,10 @@ int main(){
     int vie = 0;
     float distance = 0.0f;
     float blackdistance = 0.0f; // Ajout de la variable distanc
-    bool GameStarted = false;
+    
+    
+    const bool Start = false;
+    bool During = false;
     // game loop
 
 
@@ -54,26 +57,23 @@ int main(){
     //bool spacePressed = false;
 
     while(!WindowShouldClose()){
-        GameStarted = false;
-        
-        if(GameStarted == false)
+        if(Start == false)
         {
             BeginDrawing();
             ClearBackground(WHITE);
             DrawTextureEx(titlescreenmushroom, (Vector2) {287, 104}, 0, 15, WHITE);
-            DrawTextEx(title, TextFormat("Press Start To Play"), (Vector2) {269, 28}, 42, 2, WHITE);
-            if(IsKeyDown(KEY_SPACE)){
-                GameStarted = true;
-                if (GameStarted == true){
-
+            DrawTextEx(title, TextFormat("Press Start To Play"), (Vector2) {269, 28}, 42, 2, BLACK);
+            if(IsKeyDown(KEY_SPACE)){       
+                During = true;
+            }
+            if (During == true){
             
             // drawing element
-            UnloadTexture(titlescreenmushroom);
-            UnloadFont(title);
             float deltaTime = GetFrameTime();
 
             DrawTextEx(font, TextFormat("Vie = %d", vie), (Vector2) {269, 28}, 42, 2, WHITE);
             ClearBackground(BLUE);
+            
             // deplacement
             if (IsKeyDown(KEY_RIGHT)) position.x += playerSpeed * deltaTime;
             if (IsKeyDown(KEY_LEFT)) position.x -= playerSpeed * deltaTime;
@@ -132,8 +132,9 @@ int main(){
                 DrawTextEx(fin2 ,"Press Space For close Window", (Vector2) {69, 431}, 48, 2, BLACK );
                 if(IsKeyDown(KEY_SPACE)){
 
-                    CloseWindow();
+                  
                     UnloadFont(fin2);
+                    
                     UnloadFont(fin);
                     UnloadFont(font);
                     UnloadTexture(mushroom);
@@ -142,7 +143,6 @@ int main(){
                     CloseWindow();
                 }
             }
-            }
         // Ecran De Titre
         }
         
@@ -150,12 +150,15 @@ int main(){
             //DrawTextEx(font ,"Salut tout le monde", (Vector2) {225, 246}, font.baseSize, 2, BLACK );
         }
         
+        
         EndDrawing();
     }
 
 
     // unload et fermetture de la fenetre
+
     vie = 0;
+    During = false;
     UnloadFont(font);
     UnloadTexture(mushroom);
     UnloadTexture(blackmushroom);
