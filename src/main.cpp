@@ -59,16 +59,12 @@ int main(){
         if(GameStarted == false)
         {
             BeginDrawing();
-            SetTraceLogLevel(LOG_NONE);
             ClearBackground(WHITE);
             DrawTextureEx(titlescreenmushroom, (Vector2) {287, 104}, 0, 15, WHITE);
             DrawTextEx(title, TextFormat("Press Start To Play"), (Vector2) {269, 28}, 42, 2, WHITE);
             if(IsKeyDown(KEY_SPACE)){
-            GameStarted = true;
-            }
-        // Ecran De Titre
-        }
-        if (GameStarted == true){
+                GameStarted = true;
+                if (GameStarted == true){
 
             
             // drawing element
@@ -146,6 +142,10 @@ int main(){
                     CloseWindow();
                 }
             }
+            }
+        // Ecran De Titre
+        }
+        
 
             //DrawTextEx(font ,"Salut tout le monde", (Vector2) {225, 246}, font.baseSize, 2, BLACK );
         }
