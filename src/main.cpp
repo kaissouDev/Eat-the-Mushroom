@@ -10,6 +10,7 @@
 
 #include "main.hpp"
 
+
 using namespace std;
 
 void init(){
@@ -23,15 +24,20 @@ void init(){
 int main(){
 
     init();
+
     // drawing
     Texture2D player = LoadTexture("res/player.png");
     Texture2D  mushroom = LoadTexture("res/mushroom.png");
     Texture2D  blackmushroom = LoadTexture("res/black.png");
+    Texture2D titlescreenmushroom = LoadTexture("res/TitleScreenMushroom.png");
     Font font = LoadFont("font/Gotham-Medium.otf");
+    Font title = LoadFont("font/Gotham-Medium.otf");
 
+    
 
-    // setting pos
+    // declaration de variable
     Vector2 position = { 356, 250 };
+    Vector2 titlemushroompos = { 302, 105 };
     int PosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
     int NewPosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
     int PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
@@ -40,25 +46,38 @@ int main(){
     int vie = 0;
     float distance = 0.0f;
     float blackdistance = 0.0f; // Ajout de la variable distanc
+    bool GameStarted = false;
     // game loop
+
+
 
     //bool spacePressed = false;
 
     while(!WindowShouldClose()){
-        BeginDrawing();
-        SetTraceLogLevel(LOG_NONE);
-        // Ecran De Titre
+        GameStarted = false;
         
+        if(GameStarted == false)
+        {
+            BeginDrawing();
+            SetTraceLogLevel(LOG_NONE);
+            ClearBackground(WHITE);
+            DrawTextureEx(titlescreenmushroom, (Vector2) {287, 104}, 0, 15, WHITE);
+            DrawTextEx(title, TextFormat("Press Start To Play"), (Vector2) {269, 28}, 42, 2, WHITE);
+            if(IsKeyDown(KEY_SPACE)){
+            GameStarted = true;
+            }
+        // Ecran De Titre
+        }
+        if (GameStarted == true){
 
-
-            // drawing element
-            ClearBackground(BLUE);
             
+            // drawing element
+            UnloadTexture(titlescreenmushroom);
+            UnloadFont(title);
             float deltaTime = GetFrameTime();
 
             DrawTextEx(font, TextFormat("Vie = %d", vie), (Vector2) {269, 28}, 42, 2, WHITE);
-
-
+            ClearBackground(BLUE);
             // deplacement
             if (IsKeyDown(KEY_RIGHT)) position.x += playerSpeed * deltaTime;
             if (IsKeyDown(KEY_LEFT)) position.x -= playerSpeed * deltaTime;
@@ -126,10 +145,11 @@ int main(){
                     UnloadTexture(player);
                     CloseWindow();
                 }
-
             }
-            //DrawTextEx(font ,"Salut tout le monde", (Vector2) {225, 246}, font.baseSize, 2, BLACK );
 
+            //DrawTextEx(font ,"Salut tout le monde", (Vector2) {225, 246}, font.baseSize, 2, BLACK );
+        }
+        
         EndDrawing();
     }
 
@@ -140,5 +160,7 @@ int main(){
     UnloadTexture(mushroom);
     UnloadTexture(blackmushroom);
     UnloadTexture(player);
+    UnloadTexture(titlescreenmushroom);
+    UnloadFont(title);
     CloseWindow();
 }
