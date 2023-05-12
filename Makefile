@@ -1,2 +1,2 @@
 all:	
-	g++ -o build/main src/main.cpp -lRaylib
+	g++ -o build/main src/*.cpp -lRaylib
