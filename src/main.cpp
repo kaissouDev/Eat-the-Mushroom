@@ -1,6 +1,6 @@
 /******************************************
 *          Eat The Mushroom
-*             GPL V2
+*               MIT
 *******************************************
 *   (c) Kaissou || All right reserved!
 *              main.cpp
