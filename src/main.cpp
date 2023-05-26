@@ -8,8 +8,8 @@
 *             26/05/2023
 *******************************************/
 
-#include "main.hpp"
-
+#include <iostream>
+#include <raylib.h>
 
 using namespace std;
 
@@ -52,6 +52,9 @@ int main(){
     bool During = false;
     // game loop
 
+    Vector2 Title = {269, 28};
+    Vector2 titlescreenmushroomVector = {287, 104};
+    Vector2 LifeVectorPos = {269, 28};
 
 
     //bool spacePressed = false;
@@ -61,8 +64,8 @@ int main(){
         {
             BeginDrawing();
             ClearBackground(WHITE);
-            DrawTextureEx(titlescreenmushroom, (Vector2) {287, 104}, 0, 15, WHITE);
-            DrawTextEx(title, TextFormat("Press Start To Play"), (Vector2) {269, 28}, 42, 2, BLACK);
+            DrawTextureEx(titlescreenmushroom, titlescreenmushroomVector, 0, 15, WHITE);
+            DrawTextEx(title, TextFormat("Press Start To Play"), Title, 42, 2, BLACK);
             if(IsKeyDown(KEY_SPACE)){       
                 During = true;
             }
@@ -71,7 +74,7 @@ int main(){
             // drawing element
             float deltaTime = GetFrameTime();
 
-            DrawTextEx(font, TextFormat("Vie = %d", vie), (Vector2) {269, 28}, 42, 2, WHITE);
+            DrawTextEx(font, TextFormat("Vie = %d", vie), LifeVectorPos, 42, 2, WHITE);
             ClearBackground(BLUE);
             
             // deplacement
@@ -125,11 +128,14 @@ int main(){
                 UnloadTexture(player);
                 UnloadTexture(blackmushroom);
                 
+                Vector2 finVector = {219, 204};
+                Vector2 fin2Vector = {69, 431};
+
                 ClearBackground(WHITE);
                 Font fin = LoadFont("font/Gotham-Black.otf");
                 Font fin2 = LoadFont("font/Gotham-Medium.otf");
-                DrawTextEx(fin ,"You Win!", (Vector2) {219, 204}, 64, 2, BLACK );
-                DrawTextEx(fin2 ,"Press Space For close Window", (Vector2) {69, 431}, 48, 2, BLACK );
+                DrawTextEx(fin ,"You Win!", finVector, 64, 2, BLACK );
+                DrawTextEx(fin2 ,"Press Space For close Window", fin2Vector, 48, 2, BLACK );
                 if(IsKeyDown(KEY_SPACE)){
 
                   
