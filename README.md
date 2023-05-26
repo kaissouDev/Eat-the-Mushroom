@@ -4,7 +4,7 @@ Nous Travaillons sur de nouveau projet donc je ne pense pas que nous reviendrons
 
 # Fonctionnaliter
 
-- Code OpenSource Avec Comme license GPL-V2 (attention si cette license est pas respectée vous aurez l'interdiction de modifier le code source)
+- Code OpenSource Avec Comme license MIT
 - Ajout du joueur et du Deplacement
 - Modification De L'arriere plan (fond bleue)
 - Ajout Du Text <b>Vie</b> qui est maintenant mis a jour
