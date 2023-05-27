@@ -16,7 +16,6 @@ using namespace std;
 void init(){
     SetTargetFPS(120);  
     InitWindow(800,600, "Eat The Mushroom (Release 3.0 DEBUG)");
-    SetTraceLogLevel(LOG_NONE);
 }
 
 
@@ -24,6 +23,7 @@ void init(){
 int main(){
 
     init();
+    SetTraceLogLevel(LOG_NONE);
 
     // drawing
     Texture2D player = LoadTexture("res/player.png");
