@@ -7,11 +7,8 @@
 *******************************************
 *             26/05/2023
 *******************************************/
-
-#include <iostream>
-#include <raylib.h>
-
-using namespace std;
+/*
+    ---------- OLD CODE ----------
 
 void init(){
     SetTargetFPS(120);  
@@ -29,7 +26,7 @@ int main(){
     Texture2D player = LoadTexture("res/player.png");
     Texture2D  mushroom = LoadTexture("res/mushroom.png");
     Texture2D  blackmushroom = LoadTexture("res/black.png");
-    Texture2D titlescreenmushroom = LoadTexture("res/TitleScreenMushroom.png");
+    Texture2D TitleScreenMushroom = LoadTexture("res/TitleScreenMushroom.png");
     Font font = LoadFont("font/Gotham-Medium.otf");
     Font title = LoadFont("font/Gotham-Medium.otf");
 
@@ -53,7 +50,7 @@ int main(){
     // game loop
 
     Vector2 Title = {269, 28};
-    Vector2 titlescreenmushroomVector = {287, 104};
+    Vector2 ScreenMushroomVector = {287, 104};
     Vector2 LifeVectorPos = {269, 28};
 
 
@@ -64,7 +61,7 @@ int main(){
         {
             BeginDrawing();
             ClearBackground(WHITE);
-            DrawTextureEx(titlescreenmushroom, titlescreenmushroomVector, 0, 15, WHITE);
+            DrawTextureEx(TitleScreenMushroom, ScreenMushroomVector, 0, 15, WHITE);
             DrawTextEx(title, TextFormat("Press Start To Play"), Title, 42, 2, BLACK);
             if(IsKeyDown(KEY_SPACE)){       
                 During = true;
@@ -169,7 +166,29 @@ int main(){
     UnloadTexture(mushroom);
     UnloadTexture(blackmushroom);
     UnloadTexture(player);
-    UnloadTexture(titlescreenmushroom);
+    UnloadTexture(TitleScreenMushroom);
     UnloadFont(title);
     CloseWindow();
+}
+*/
+#include "init.hpp"
+
+using namespace std;
+
+int main(){
+    SetTraceLogLevel(LOG_NONE);
+    Init init;
+
+    init.InitWindowFunctions();
+    init.LoadTextureFunctions();
+
+
+    while(!WindowShouldClose()){
+        BeginDrawing();
+        ClearBackground(BLACK);
+        EndDrawing();
+    }
+
+    CloseWindow();
+    return 0;
 }

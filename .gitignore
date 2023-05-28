@@ -1,3 +1,4 @@
 # remove all files
 .vscode/
 build/
+build-linux/

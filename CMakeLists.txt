@@ -9,6 +9,7 @@ add_subdirectory(3rdparty)
 add_executable(${PROJECT_NAME})
 target_sources(${PROJECT_NAME} PRIVATE 
     src/main.cpp
+    src/init.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE 3rdparty)
 
