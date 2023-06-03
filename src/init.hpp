@@ -1,6 +1,7 @@
 #include <raylib.h>
 #include <iostream>
 #include <math.h>
+#include <fmt/core.h>
 
 class Init{
     public:

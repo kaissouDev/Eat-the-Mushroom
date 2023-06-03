@@ -173,12 +173,13 @@ int main(){
 */
 #include "init.hpp"
 
+
 using namespace std;
 
 int main(){
     SetTraceLogLevel(LOG_NONE);
     Init init;
-
+    fmt::print("Hello Window :) !");
     init.InitWindowFunctions();
     init.LoadTextureFunctions();
 
