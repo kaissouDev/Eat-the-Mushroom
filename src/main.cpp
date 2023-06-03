@@ -187,6 +187,7 @@ int main(){
         BeginDrawing();
         ClearBackground(BLACK);
         DrawText("Hello World Raylib...", 0, 0, 64, WHITE);
+        DrawText("Start", 0, 200, 32, WHITE);
         EndDrawing();
     }
     CloseWindow();
