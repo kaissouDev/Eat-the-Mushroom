@@ -1,3 +1,8 @@
 -- futur update
 
-print("futur update ...")
+
+function main()
+    
+    print("futur update ...")
+end
+main()
