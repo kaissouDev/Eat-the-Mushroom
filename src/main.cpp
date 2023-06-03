@@ -186,9 +186,9 @@ int main(){
     while(!WindowShouldClose()){
         BeginDrawing();
         ClearBackground(BLACK);
+        DrawText("Hello World Raylib...", 0, 0, 64, WHITE);
         EndDrawing();
     }
-
     CloseWindow();
     return 0;
 }
