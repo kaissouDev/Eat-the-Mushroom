@@ -34,11 +34,13 @@ int main(int argc, char ** argv){
         else if(initclass.GameStarted == true)
         {
             ClearBackground(WHITE);
-            DrawTexture(initclass.texture1, 0, 0, WHITE);
+            DrawText(TextFormat("Vie = %d", initclass.vie), 269, 28, 42, BLACK);
+            DrawTexture(initclass.mushroom, initclass.PosX, initclass.PosY, WHITE);
+            DrawTexture(initclass.player, 0, 500, WHITE);
         }
         EndDrawing();
     }
-    UnloadTexture(initclass.texture1);
+    UnloadTexture(initclass.mushroom);
     CloseWindow();
     return 0;
 }

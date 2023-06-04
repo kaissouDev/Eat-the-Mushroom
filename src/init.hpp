@@ -6,9 +6,13 @@
 class InitClass{
     public:
         //void LoadTextureFunctions();
-        Texture2D texture1 = LoadTexture("res/mushroom.png");
+        Texture2D mushroom = LoadTexture("res/mushroom.png");
+        Texture2D player = LoadTexture("res/player.png");
+        int PosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
+        int PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
         void TitleScreen();
         bool GameStarted;
+        int vie = 0;
     private:
     //protected:
 
