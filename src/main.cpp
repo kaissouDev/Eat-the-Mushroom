@@ -34,8 +34,8 @@ int main(int argc, char ** argv){
         else if(initclass.GameStarted == true)
         {
             ClearBackground(WHITE);
+            DrawTexture(initclass.texture1, 0, 0, WHITE);
         }
-        DrawTexture(initclass.texture1, 0, 0, WHITE);
         EndDrawing();
     }
     UnloadTexture(initclass.texture1);
