@@ -11,24 +11,29 @@
 
 #include "init.hpp"
 
+//load textures
 
 using namespace std;
 
-int main(){
-    SetTraceLogLevel(LOG_NONE);
-    Init init;
-    fmt::print("Hello Window :) !");
-    init.InitWindowFunctions();
-    init.LoadTextureFunctions();
+int main(int argc, char ** argv){
 
+
+    SetTraceLogLevel(LOG_ALL);
+    fmt::print("Hello Window :) !");
+    InitWindowClass initwindow;
+    initwindow.InitWindowFunctions();
+    InitClass initclass;
 
     while(!WindowShouldClose()){
         BeginDrawing();
         ClearBackground(BLACK);
-        DrawText("Hello World Raylib...", 0, 0, 64, WHITE);
-        DrawText("Start", 0, 200, 32, WHITE);
+        
+        initclass.TitleScreen();
+
+        DrawTexture(initclass.texture1, 0, 0, WHITE);
         EndDrawing();
     }
+    UnloadTexture(initclass.texture1);
     CloseWindow();
     return 0;
 }

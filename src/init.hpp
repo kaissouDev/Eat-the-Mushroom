@@ -3,12 +3,17 @@
 #include <math.h>
 #include <fmt/core.h>
 
-class Init{
+class InitClass{
+    public:
+        //void LoadTextureFunctions();
+        Texture2D texture1 = LoadTexture("res/mushroom.png");
+        void TitleScreen();
+    private:
+    //protected:
+
+};
+
+class InitWindowClass{
     public:
         void InitWindowFunctions();
-        void LoadTextureFunctions();
-    private:
-
-    protected:
-
 };

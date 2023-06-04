@@ -10,10 +10,14 @@
 
 #include "init.hpp"
 
-void Init::InitWindowFunctions(){
+void InitWindowClass::InitWindowFunctions(){
     InitWindow(800, 600, "hello raylib");
-    //SetTraceLogLevel(LOG_NONE);
+    SetTraceLogLevel(LOG_NONE);
 }
-void Init::LoadTextureFunctions(){
-    Texture2D mushroom = LoadTexture("res/mushroom.png");
+
+void InitClass::TitleScreen(){
+    DrawText("Press Start To Play!", 50, 500, 64, WHITE);
+    if(IsKeyPressed(KEY_SPACE)){
+        fmt::print("space test");
+    }
 }
