@@ -11,6 +11,7 @@
 
 #include "init.hpp"
 #include "input.hpp"
+#include <cmath>
 
 //load textures
 
@@ -18,7 +19,7 @@ using namespace std;
 
 int main(int argc, char ** argv){
 
-    SetTraceLogLevel(LOG_ALL);
+    SetTraceLogLevel(LOG_NONE);
     fmt::print("Hello Window :) !");
     InitWindowClass initwindow;
     initwindow.InitWindowFunctions();
