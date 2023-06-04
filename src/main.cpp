@@ -24,12 +24,17 @@ int main(int argc, char ** argv){
     initwindow.InitWindowFunctions();
     InitClass initclass;
 
+    initclass.GameStarted = false;
     while(!WindowShouldClose()){
         BeginDrawing();
-        ClearBackground(BLACK);
-        
-        initclass.TitleScreen();
-
+        if(initclass.GameStarted == false){
+            ClearBackground(BLACK);
+            initclass.TitleScreen();
+        }
+        else if(initclass.GameStarted == true)
+        {
+            ClearBackground(WHITE);
+        }
         DrawTexture(initclass.texture1, 0, 0, WHITE);
         EndDrawing();
     }

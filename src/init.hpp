@@ -8,6 +8,7 @@ class InitClass{
         //void LoadTextureFunctions();
         Texture2D texture1 = LoadTexture("res/mushroom.png");
         void TitleScreen();
+        bool GameStarted;
     private:
     //protected:
 

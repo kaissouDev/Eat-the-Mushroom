@@ -18,6 +18,8 @@ void InitWindowClass::InitWindowFunctions(){
 void InitClass::TitleScreen(){
     DrawText("Press Start To Play!", 50, 500, 64, WHITE);
     if(IsKeyPressed(KEY_SPACE)){
+        GameStarted = true;
         fmt::print("space test");
+        ClearBackground(WHITE);
     }
 }
