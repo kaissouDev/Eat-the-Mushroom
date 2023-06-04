@@ -13,7 +13,9 @@ class InitClass{
         void TitleScreen();
         bool GameStarted;
         int vie = 0;
-    private:
+        
+        //void MovePlayer();
+        private:
     //protected:
 
 };
