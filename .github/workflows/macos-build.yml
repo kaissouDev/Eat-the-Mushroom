@@ -33,7 +33,7 @@ jobs:
       - name: Create .app
         run: |
           mkdir -p ${{github.workspace}}/build/MyApp.app/Contents/MacOS
-          cp ${{github.workspace}}/build/bin/MyApp ${{github.workspace}}/build/MyApp.app/Contents/MacOS/MyApp
+          cp ./build/bin/Eat-The-Mushroom ${{github.workspace}}/build/MyApp.app/Contents/MacOS/Eat-The-Mushroom
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
