@@ -30,12 +30,13 @@ jobs:
         working-directory: ${{github.workspace}}/build
         run: ctest -C ${{env.BUILD_TYPE}}
 
-      - name: Create DMG Artifact
+      - name: Create .app
         run: |
-          hdiutil create -srcfolder ${{github.workspace}}/build/bin -ov -format UDBZ -volname MyApp ${{github.workspace}}/MyApp.dmg
+          mkdir -p ${{github.workspace}}/build/MyApp.app/Contents/MacOS
+          cp ${{github.workspace}}/build/bin/MyApp ${{github.workspace}}/build/MyApp.app/Contents/MacOS/MyApp
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: MyApp DMG
-          path: ${{github.workspace}}/MyApp.dmg
+          name: MyApp .app
+          path: ${{github.workspace}}/build/MyApp.app
