@@ -36,13 +36,8 @@ jobs:
         working-directory: ${{github.workspace}}/build
         run: ctest -C ${{env.BUILD_TYPE}}
 
-      - name: Create Archive Artifact
-        run: |
-          cd ${{github.workspace}}/build/bin
-          tar -czvf MyApp.tar.gz Eat-The-Mushroom
-
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: MyApp Archive
-          path: ${{github.workspace}}/build/bin/MyApp.tar.gz
+          name: MyApp Build
+          path: ${{github.workspace}}/build/bin
