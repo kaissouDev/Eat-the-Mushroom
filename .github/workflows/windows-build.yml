@@ -1,0 +1,36 @@
+name: CMake Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update Git submodules
+        run: git submodule update --init --recursive
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v1.0.1
+
+      - name: Configure CMake
+        run: cmake -B build
+
+      - name: Build project
+        run: cmake --build build --config Release
+
+      - name: Create artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: MyArtifact
+          path: build/Release/
+
