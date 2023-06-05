@@ -33,16 +33,16 @@ jobs:
       - name: Create .app
         run: |
           mkdir -p ${{github.workspace}}/build/MyApp.app/Contents/MacOS
-          cp ./build/bin/Eat-The-Mushroom ${{github.workspace}}/build/MyApp.app/Contents/MacOS/Eat-The-Mushroom
+          cp ${{github.workspace}}/build/bin/Eat-The-Mushroom ${{github.workspace}}/build/MyApp.app/Contents/MacOS/Eat-The-Mushroom
 
           mkdir -p ${{github.workspace}}/build/MyApp.app/Contents/Resources/font
-          cp -R ${CMAKE_CURRENT_SOURCE_DIR}/font ${{github.workspace}}/build/MyApp.app/Contents/Resources/font
+          cp -R ${{github.workspace}}/font ${{github.workspace}}/build/MyApp.app/Contents/Resources/font
 
           mkdir -p ${{github.workspace}}/build/MyApp.app/Contents/Resources/res
-          cp -R ${CMAKE_CURRENT_SOURCE_DIR}/res ${{github.workspace}}/build/MyApp.app/Contents/Resources/res
+          cp -R ${{github.workspace}}/res ${{github.workspace}}/build/MyApp.app/Contents/Resources/res
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: MyApp .app
+          name: Eat-The-Mushroom.app
           path: ${{github.workspace}}/build/MyApp.app
