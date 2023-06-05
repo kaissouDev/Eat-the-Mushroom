@@ -1,0 +1,42 @@
+name: Linux-Build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update Git Submodules
+        run: git submodule update --init --recursive
+
+      - name: Configure CMake
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - name: Build
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+      - name: Test
+        working-directory: ${{github.workspace}}/build
+        run: ctest -C ${{env.BUILD_TYPE}}
+
+      - name: Create Archive Artifact
+        run: |
+          cd ${{github.workspace}}/build
+          tar -czvf MyApp.tar.gz MyApp
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: MyApp Archive
+          path: ${{github.workspace}}/build/MyApp.tar.gz
