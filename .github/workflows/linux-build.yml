@@ -39,7 +39,7 @@ jobs:
       - name: Create Archive Artifact
         run: |
           cd ${{github.workspace}}/build/bin
-          tar -czvf MyApp.tar.gz MyApp
+          tar -czvf MyApp.tar.gz Eat-The-Mushroom
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
