@@ -33,8 +33,7 @@ jobs:
       - name: Create DMG Artifact
         run: |
           hdiutil create -srcfolder ${{github.workspace}}/build/MyApp.app -ov -format UDBZ -volname MyApp ${{github.workspace}}/build/MyApp.dmg
-        # Rename and move the artifact to the appropriate location
-        run: mv ${{github.workspace}}/build/MyApp.dmg ${{github.workspace}}/MyApp.dmg
+          mv ${{github.workspace}}/build/MyApp.dmg ${{github.workspace}}/MyApp.dmg
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
