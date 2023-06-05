@@ -20,6 +20,11 @@ jobs:
       - name: Update Git Submodules
         run: git submodule update --init --recursive
 
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxrandr-dev
+
       - name: Configure CMake
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
