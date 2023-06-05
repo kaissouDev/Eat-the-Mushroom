@@ -33,4 +33,15 @@ jobs:
 
       - name: Test
         working-directory: ${{github.workspace}}/build
-       
+        run: ctest -C ${{env.BUILD_TYPE}}
+
+      - name: Create Archive Artifact
+        run: |
+          cd ${{github.workspace}}/build
+          tar -czvf MyApp.tar.gz MyApp
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: MyApp Archive
+          path: ${{github.workspace}}/build/MyApp.tar.gz
