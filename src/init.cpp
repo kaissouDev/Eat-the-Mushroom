@@ -11,7 +11,7 @@
 #include "init.hpp"
 
 void InitWindowClass::InitWindowFunctions(){
-    InitWindow(800, 600, "hello raylib");
+    InitWindow(800, 600, "Eat-The-Mushroom");
     SetTraceLogLevel(LOG_NONE);
 }
 

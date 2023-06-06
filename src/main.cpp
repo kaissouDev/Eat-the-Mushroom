@@ -16,11 +16,20 @@
 //load textures
 
 using namespace std;
+using namespace fmt;
+
+
+void _DEBUG_(){
+    print("InitWindow ..\n");
+    print("The Maximum framewrate is : 60.0fps\n");
+    print("Desktop Version");
+
+}
+
 
 int main(int argc, char ** argv){
 
     SetTraceLogLevel(LOG_NONE);
-    fmt::print("Hello Window :) !");
     InitWindowClass initwindow;
     initwindow.InitWindowFunctions();
     InitClass initclass;
@@ -42,7 +51,7 @@ int main(int argc, char ** argv){
         else if(initclass.GameStarted == true)
         {
             float deltaTime = GetFrameTime();
-            ClearBackground(WHITE);
+            ClearBackground(BLUE);
             DrawText(TextFormat("Vie = %d", initclass.vie), 269, 28, 42, BLACK);
             DrawTexture(initclass.mushroom, initclass.PosX, initclass.PosY, WHITE);
             DrawTexture(initclass.player, position.x, position.y, WHITE);
