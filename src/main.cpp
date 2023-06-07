@@ -29,6 +29,9 @@ void _DEBUG_(){
 
 int main(int argc, char ** argv){
 
+    _DEBUG_();
+
+
     SetTraceLogLevel(LOG_NONE);
     InitWindowClass initwindow;
     initwindow.InitWindowFunctions();
