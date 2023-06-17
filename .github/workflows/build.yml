@@ -22,7 +22,6 @@ jobs:
 
     - uses: ilammy/msvc-dev-cmd@v1
       with:
-        msvc-version: 'latest'
         arch: 'x64'
 
     - name: Configure CMake
