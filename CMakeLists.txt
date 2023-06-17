@@ -16,8 +16,8 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 # Include testing
-include(CTest)
-enable_testing()
+#include(CTest)
+#enable_testing()
 
 # Add subdirectory for 3rd party library
 add_subdirectory(3rdparty)
