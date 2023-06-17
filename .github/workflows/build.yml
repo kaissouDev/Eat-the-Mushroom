@@ -33,7 +33,7 @@ jobs:
       - name: Create Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Windows-Build
+          name: Windows
           path: ${{github.workspace}}/build/bin
   Linux-Build:
     runs-on: ubuntu-latest
@@ -52,7 +52,7 @@ jobs:
   
 
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja"
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja" 
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
@@ -64,7 +64,7 @@ jobs:
       - name: Create Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Linux-Build
+          name: Linux
           path: ${{github.workspace}}/build/bin
   Macos-x86_64-Build:
     runs-on: macos-latest
@@ -79,7 +79,7 @@ jobs:
         run: brew install ninja
 
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=x86_64
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_OSX_DEPLOYMENT_TARGET
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
@@ -91,7 +91,7 @@ jobs:
       - name: Create Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: macOS-x86_64-Build
+          name: Macos-x86_64
           path: ${{github.workspace}}/build/bin
   Macos-Arm64-Build:
     runs-on: macos-latest
@@ -106,7 +106,7 @@ jobs:
         run: brew install ninja
 
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=arm64
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
@@ -118,5 +118,5 @@ jobs:
       - name: Create Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: macOS-Arm64-Build
+          name: Macos-Arm64
           path: ${{github.workspace}}/build/bin
