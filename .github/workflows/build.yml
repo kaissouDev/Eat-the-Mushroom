@@ -11,10 +11,10 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-Windows-Build:
-  runs-on: windows-latest
+  Windows-Build:
+    runs-on: windows-latest
 
-  steps:
+    steps:
     - uses: actions/checkout@v3
 
     - name: Update Git Submodules
