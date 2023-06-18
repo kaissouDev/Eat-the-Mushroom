@@ -19,17 +19,22 @@ using namespace std;
 using namespace fmt;
 
 
-void _DEBUG_(){
+void _DEBUG_(InitClass initclass){
     print("InitWindow ..\n");
     print("The Maximum framewrate is : 60.0fps\n");
-    print("Desktop Version");
+    print("Desktop Version\n");
+    
+    if (!initclass.mushroom.id || !initclass.player.id){
+        print("texture not load...\n");
+    }
+    else{
+        print("texture load !\n");
+    }
 
 }
 
 
 int main(int argc, char ** argv){
-
-    _DEBUG_();
 
 
     SetTraceLogLevel(LOG_NONE);
@@ -37,6 +42,8 @@ int main(int argc, char ** argv){
     initwindow.InitWindowFunctions();
     InitClass initclass;
     Move move;
+
+    _DEBUG_(initclass);
 
     float distance = 0.0f;
 

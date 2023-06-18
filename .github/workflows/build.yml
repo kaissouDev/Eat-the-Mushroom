@@ -89,8 +89,11 @@ jobs:
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C ${{env.BUILD_TYPE}}
+        run: |
+          cd ${{github.workspace}}/build/bin     # Se déplacer dans le répertoire contenant l'exécutable
+          ./Eat-The-Mushroom &                     # Lancer l'exécutable en arrière-plan
+          sleep 10s                               # Attendre 10 secondes
+          pkill Eat-The-Mushroom                    # Fermer l'exécutable
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2
@@ -116,8 +119,11 @@ jobs:
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C ${{env.BUILD_TYPE}}
+        run: |
+          cd ${{github.workspace}}/build/bin     # Se déplacer dans le répertoire contenant l'exécutable
+          ./Eat-The-Mushroom &                     # Lancer l'exécutable en arrière-plan
+          sleep 10s                               # Attendre 10 secondes
+          pkill Eat-The-Mushroom                    # Fermer l'exécutable
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2
