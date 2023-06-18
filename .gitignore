@@ -1,4 +1,11 @@
 # remove all files
 .vscode/
+.vs/
+.Idea/
+*.exe
+*.dll
+*.o
+*.a
+*.dylib
 build/
 build-linux/
