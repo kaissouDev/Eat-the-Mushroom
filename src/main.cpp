@@ -62,7 +62,7 @@ int main(int argc, char ** argv){
         {
             float deltaTime = GetFrameTime();
             ClearBackground(BLUE);
-            DrawText(TextFormat("Vie = %d", initclass.vie), 269, 28, 42, BLACK);
+            DrawText(TextFormat("Health = %d", initclass.vie), 269, 28, 42, BLACK);
             DrawTexture(initclass.mushroom, initclass.PosX, initclass.PosY, WHITE);
             DrawTexture(initclass.player, position.x, position.y, WHITE);
         
