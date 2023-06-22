@@ -17,9 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Update Git Submodules
-      run: git submodule update --init --recursive
-
     - uses: ilammy/msvc-dev-cmd@v1
       with:
         arch: 'x64'
@@ -45,9 +42,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Update Git Submodules
-        run: git submodule update --init --recursive
-      
       - name: Install Dependencies
         run: |
           sudo apt-get update
@@ -75,10 +69,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Update Git Submodules
-        run: git submodule update --init --recursive
-
+      
       - name: Install Ninja
         run: brew install ninja
 
