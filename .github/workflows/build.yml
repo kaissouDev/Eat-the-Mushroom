@@ -69,7 +69,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Install Ninja
         run: brew install ninja
 
@@ -93,9 +93,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Update Git Submodules
-        run: git submodule update --init --recursive
 
       - name: Install Ninja
         run: brew install ninja
