@@ -1,3 +1,7 @@
 [submodule "3rdparty/raylib"]
 	path = 3rdparty/raylib
 	url = https://github.com/raysan5/raylib.git
+
+[submodule "3rdparty/fmt"]
+	path = 3rdparty/fmt
+	url = https://github.com/fmtlib/fmt.git
