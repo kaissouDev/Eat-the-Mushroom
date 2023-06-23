@@ -37,7 +37,7 @@ jobs:
     - name: Create Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: Windows
+        name: Windows-Msvc
         path: ${{github.workspace}}/build/bin
   Windows-Mingw-Build:
     runs-on: windows-latest
@@ -61,7 +61,7 @@ jobs:
     - name: Create Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: Windows
+        name: Windows-Mingw
         path: ${{github.workspace}}/build/bin
   Linux-Build:
     runs-on: ubuntu-latest
