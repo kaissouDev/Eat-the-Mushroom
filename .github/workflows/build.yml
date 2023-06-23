@@ -17,6 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Update Git submodules
+      run: git submodule update --init --recursive
+
     - uses: ilammy/msvc-dev-cmd@v1
       with:
         arch: 'x64'
@@ -42,6 +45,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Update Git submodules
+      run: git submodule update --init --recursive
+
     - name: Configure CMake
       run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -G Ninja
 
@@ -63,12 +69,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Update Git submodules
+        run: git submodule update --init --recursive
+
       - name: Install Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y g++ clang libc++-dev libc++abi-dev cmake ninja-build libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libfontconfig1-dev libxrandr-dev libxinerama-dev
-
-  
 
       - name: Configure CMake
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja" 
@@ -90,6 +97,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Update Git submodules
+        run: git submodule update --init --recursive
 
       - name: Install Ninja
         run: brew install ninja
@@ -114,6 +124,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Update Git submodules
+        run: git submodule update --init --recursive
 
       - name: Install Ninja
         run: brew install ninja
