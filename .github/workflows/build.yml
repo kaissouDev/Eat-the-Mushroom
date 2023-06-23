@@ -11,7 +11,7 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  Windows-Build:
+  Windows-Msvc-Build:
     runs-on: windows-latest
 
     steps:
@@ -23,6 +23,31 @@ jobs:
 
     - name: Configure CMake
       run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_IGNORE_PATH=C:\ProgramData\chocolatey\bin -G "Ninja"
+
+    - name: Build
+      run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
+      
+    - name: Test
+      run: |
+        echo "Test Coming Soon..."
+
+    - name: Create Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Windows
+        path: ${{github.workspace}}/build/bin
+  Windows-Mingw-Build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: 'x64'
+
+    - name: Configure CMake
+      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -G Ninja
 
     - name: Build
       run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
