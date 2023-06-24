@@ -10,6 +10,7 @@
 
 #include "SDL.h"
 #include <stdio.h>
+#include <fmt/core.h>
 
 int main(int argc, char* argv[]) {
 
@@ -17,13 +18,16 @@ int main(int argc, char* argv[]) {
 
     SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
 
+
     // Create an application window with the following settings:
     window = SDL_CreateWindow(
         "An SDL2 window",                  // window title
         640,                               // width, in pixels
         480,                               // height, in pixels
-        SDL_WINDOW_OPENGL                  // flags - see below
+        SDL_WINDOW_VULKAN                 // flags - see below
     );
+
+    fmt::print("hello window :)");
 
     // Check that the window was successfully created
     if (window == NULL) {

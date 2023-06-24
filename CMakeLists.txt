@@ -1,3 +1,5 @@
+# RunCommand from build -> cmake -DBUILD_SHARED_LIBS=FALSE -G Ninja ..
+
 cmake_minimum_required(VERSION 3.8)
 project(Eat-The-Mushroom CXX)
 
