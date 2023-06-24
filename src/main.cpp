@@ -37,6 +37,8 @@ void _DEBUG_(InitClass initclass){
 int main(int argc, char ** argv){
 
     if(!glfwInit()){
+        std::cin.ignore();
+        print("failed to init glfw3");
         boxer::Selection glfwInit = boxer::show("La version de votre GPU n'est pas compatible avec OpenGL. Veuillez changer ou mettre à jour votre GPU.", "Échec de la création de la fenêtre !", boxer::Style::Warning);
     }
 
@@ -57,9 +59,6 @@ int main(int argc, char ** argv){
 
     while(!WindowShouldClose()){
         BeginDrawing();
-        if(!glfwInit()){
-            boxer::Selection glfwInit = boxer::show("La version de votre GPU n'est pas compatible avec OpenGL. Veuillez changer ou mettre à jour votre GPU.", "Échec de la création de la fenêtre !", boxer::Style::Warning);
-        }
         if(initclass.GameStarted == false){
             ClearBackground(BLACK);
             initclass.TitleScreen();
