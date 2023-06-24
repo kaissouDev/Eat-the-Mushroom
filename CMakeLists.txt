@@ -20,9 +20,8 @@ if(MINGW)
 endif()
 
 if(MSVC)
-    set(CMAKE_C_FLAGS_PROFILE "/MTd /Zi /Ox /Gd")
+    set(CMAKE_C_FLAGS_PROFILE "/MT")
     set(CMAKE_CXX_FLAGS_PROFILE "${CMAKE_C_FLAGS_PROFILE}")
-    set(CMAKE_EXE_LINKER_FLAGS_PROFILE "/PROFILE /DEBUG")
 endif()
 
 
