@@ -1,17 +1,10 @@
-add_subdirectory(raylib)
-add_subdirectory(fmt)
-add_subdirectory(Boxer)
+set(SDL_TEST OFF)
+add_subdirectory(SDL)
 
 # Create a shared library for 3rdparty
 add_library(3rdparty INTERFACE)
 
 # Link library
 target_link_libraries(3rdparty INTERFACE 
-    raylib
-    fmt
-    Boxer
+    SDL3::SDL3
 )
-
-if (WIN32)
-   target_compile_definitions(Boxer PRIVATE UNICODE)
-endif (WIN32)
