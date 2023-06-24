@@ -3,7 +3,6 @@ project(Eat-The-Mushroom CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-#set(CMAKE_GENERATOR "Ninja" CACHE INTERNAL "CMake generator" FORCE)
 
 
 # Set CPack configuration
@@ -24,29 +23,13 @@ if(MINGW)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")
 endif()
 
-if(MSVC)
-    set(CMAKE_C_FLAGS_PROFILE "/MT /Zi /Ox /Gd")
-    set(CMAKE_CXX_FLAGS_PROFILE "${CMAKE_C_FLAGS_PROFILE}")
-    set(CMAKE_EXE_LINKER_FLAGS_PROFILE "/PROFILE /DEBUG")
-endif()
-
-
 add_subdirectory(3rdparty)
 
 # Create the executable target
 add_executable(${PROJECT_NAME}
     src/main.cpp
-    src/init.cpp
 )
 
 # Link the 3rdparty library to the executable target
 target_link_libraries(${PROJECT_NAME} PRIVATE 3rdparty)
-
-# Copy font and res directories to the appropriate build directory
-add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${PROJECT_NAME}>/font"
-    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${PROJECT_NAME}>/res"
-    COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/font" "$<TARGET_FILE_DIR:${PROJECT_NAME}>/font"
-    COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/res" "$<TARGET_FILE_DIR:${PROJECT_NAME}>/res"
-)
-
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall)
