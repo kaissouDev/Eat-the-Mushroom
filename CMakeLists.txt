@@ -15,17 +15,12 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
-# Include testing
-#include(CTest)
-#enable_testing()
-
-# Add subdirectory for 3rd party library
 if(MINGW)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")
 endif()
 
 if(MSVC)
-    set(CMAKE_C_FLAGS_PROFILE "/MT /Zi /Ox /Gd")
+    set(CMAKE_C_FLAGS_PROFILE "/MTd /Zi /Ox /Gd")
     set(CMAKE_CXX_FLAGS_PROFILE "${CMAKE_C_FLAGS_PROFILE}")
     set(CMAKE_EXE_LINKER_FLAGS_PROFILE "/PROFILE /DEBUG")
 endif()
