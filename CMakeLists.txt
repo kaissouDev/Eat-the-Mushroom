@@ -22,7 +22,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 # Add subdirectory for 3rd party library
 if(MINGW)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")
+elseif(MSVC)
+    set(CMAKE_C_FLAGS_PROFILE "/MT /Zi /Ox /Gd")
+    set(CMAKE_CXX_FLAGS_PROFILE "${CMAKE_C_FLAGS_PROFILE}")    
 endif()
+
+
 
 add_subdirectory(3rdparty)
 
