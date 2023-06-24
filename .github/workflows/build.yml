@@ -25,7 +25,7 @@ jobs:
         arch: 'x64'
 
     - name: Configure CMake
-      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_IGNORE_PATH=C:\ProgramData\chocolatey\bin -G "Ninja"
+      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_IGNORE_PATH=C:\ProgramData\chocolatey\bin -DCMAKE_BUILD_TYPE=RelWithDebInfo -G "Ninja"
 
     - name: Build
       run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
