@@ -18,8 +18,14 @@ if(MINGW)
 endif()
 
 if(MSVC)
-    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+    set(CMAKE_C_FLAGS_PROFILE "/MT /Zi /Ox /Gd"
+        CACHE STRING "Profiling C flags")
+    set(CMAKE_CXX_FLAGS_PROFILE "${CMAKE_C_FLAGS_PROFILE}"
+        CACHE STRING "Profiling C++ flags")
+    set(CMAKE_EXE_LINKER_FLAGS_PROFILE "/PROFILE /DEBUG"
+        CACHE STRING "Profiling linker flags")
 endif()
+
 
 add_subdirectory(3rdparty)
 
