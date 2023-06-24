@@ -11,6 +11,10 @@
 #include "init.hpp"
 
 void InitWindowClass::InitWindowFunctions(){
+    if (!glfwInit()) {
+        boxer::Selection glfwInit = boxer::show("La version de votre GPU n'est pas compatible avec OpenGL. Veuillez changer ou mettre à jour votre GPU.", "Échec de la création de la fenêtre !", boxer::Style::Warning);
+    }
+    
     InitWindow(800, 600, "Eat-The-Mushroom");
     SetTraceLogLevel(LOG_NONE);
 }
