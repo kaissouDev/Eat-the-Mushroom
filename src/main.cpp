@@ -52,6 +52,10 @@ int main(int argc, char ** argv){
     Vector2 position = {0, 500};
     const float playerSpeed = 300.0f;
 
+    if(!glfwInit()){
+        boxer::Selection glfwInit = boxer::show("the version of your gpu is not compatible with opengl, please change or update your gpu.", "Failed to create window!", boxer::Style::Warning);
+    }
+
     while(!WindowShouldClose()){
         BeginDrawing();
         if(initclass.GameStarted == false){

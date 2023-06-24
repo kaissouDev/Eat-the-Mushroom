@@ -2,6 +2,8 @@
 #include <iostream>
 #include <math.h>
 #include <fmt/core.h>
+#include <glfw/glfw3.h>
+#include <boxer/boxer.h>
 
 class InitClass {
 public:
