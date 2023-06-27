@@ -11,7 +11,6 @@
 #include <SDL3/SDL.h>
 #include <stdio.h>
 #include <fmt/core.h>
-#include <boxer/boxer.h>
 
 int main(int argc, char* argv[]) {
 
@@ -32,14 +31,6 @@ int main(int argc, char* argv[]) {
 
 
     renderer = SDL_CreateRenderer(window, NULL, 0);
-
-
-    // Check that the window was successfully created
-    if (window == NULL) {
-        // In the case that the window could not be made...
-        boxer::show("Could not create window", "Window error");
-        return 1;
-    }
 
     while (isRunning) {
         // Gestion des événements
