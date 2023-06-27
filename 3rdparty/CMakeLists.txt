@@ -8,7 +8,7 @@ add_library(3rdparty INTERFACE)
 
 # Link library
 target_link_libraries(3rdparty INTERFACE 
-    Boxer
     SDL3::SDL3
     fmt
+    Boxer
 )

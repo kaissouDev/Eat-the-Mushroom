@@ -11,7 +11,7 @@
 #include "SDL.h"
 #include <stdio.h>
 #include <fmt/core.h>
-#include <boxer.h>
+#include <boxer/boxer.h>
 
 int main(int argc, char* argv[]) {
 
