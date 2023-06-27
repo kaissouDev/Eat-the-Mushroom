@@ -49,11 +49,6 @@ jobs:
     - name: Update Git submodules
       run: git submodule update --init --recursive
 
-    - name: Install MinGW
-      run: |
-        choco install mingw -y
-        refreshenv
-
     - name: Configure CMake
       run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=gcc.exe -DCMAKE_CXX_COMPILER=g++.exe
 
