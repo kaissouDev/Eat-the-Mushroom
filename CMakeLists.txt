@@ -1,10 +1,7 @@
 # RunCommand from build -> cmake -DBUILD_SHARED_LIBS=FALSE -G Ninja ..
 
 cmake_minimum_required(VERSION 3.20)
-project(Eat-The-Mushroom CXX)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+project(Eat-The-Mushroom)
 
 # Set CPack configuration
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
