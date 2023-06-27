@@ -10,6 +10,3 @@ target_link_libraries(3rdparty INTERFACE
     fmt
 )
 
-if (WIN32)
-   target_compile_definitions(Boxer PRIVATE UNICODE)
-endif (WIN32)
