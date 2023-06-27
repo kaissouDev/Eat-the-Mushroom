@@ -28,7 +28,9 @@ jobs:
       run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_IGNORE_PATH=C:\ProgramData\chocolatey\bin -DBUILD_SHARED_LIBS=FALSE -G "Ninja"
 
     - name: Build
-      run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
+      run: |
+        cd build
+        cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
       
     - name: Test
       run: |
@@ -52,7 +54,9 @@ jobs:
       run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DBUILD_SHARED_LIBS=FALSE -G Ninja
 
     - name: Build
-      run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
+      run: |
+        cd build
+        cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
       
     - name: Test
       run: |
@@ -81,7 +85,9 @@ jobs:
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_SHARED_LIBS=FALSE -G "Ninja" 
 
       - name: Build
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: |
+          cd build 
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
         run: |
@@ -108,7 +114,9 @@ jobs:
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_SHARED_LIBS=FALSE -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 
       - name: Build
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: |
+          cd build
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
         run: |
@@ -135,7 +143,9 @@ jobs:
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_SHARED_LIBS=FALSE -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 
       - name: Build
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: |
+          cd build
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
         run: |
