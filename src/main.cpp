@@ -8,7 +8,7 @@
 // Example program:
 // Using SDL2 to create an application window
 
-#include "SDL.h"
+#include <SDL3/SDL.h>
 #include <stdio.h>
 #include <fmt/core.h>
 #include <boxer/boxer.h>
