@@ -49,14 +49,17 @@ jobs:
     - name: Update Git submodules
       run: git submodule update --init --recursive
 
+    - name: Install MinGW
+      run: |
+        choco install mingw -y
+        refreshenv
+
     - name: Configure CMake
-      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DBUILD_SHARED_LIBS=FALSE -G "Ninja"
+      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=gcc.exe -DCMAKE_CXX_COMPILER=g++.exe
 
     - name: Build
-      run: |
-        cd build
-        cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
-      
+      run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
+
     - name: Test
       run: |
         echo "Test Coming Soon..."
@@ -65,7 +68,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Windows-Mingw
-        path: ${{github.workspace}}/build/bin
+        path: ${{ github.workspace }}/build/bin
   Linux-Build:
     runs-on: ubuntu-latest
 
