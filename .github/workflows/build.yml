@@ -50,7 +50,7 @@ jobs:
       run: git submodule update --init --recursive
 
     - name: Configure CMake
-      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=C:/ProgramData/chocolatey/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/ProgramData/chocolatey/bin/g++.exe
+      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=FALSE -DCMAKE_C_COMPILER=C:/ProgramData/chocolatey/bin/gcc -DCMAKE_CXX_COMPILER=C:/ProgramData/chocolatey/bin/g++ -G "Ninja"
 
     - name: Build
       run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
