@@ -48,6 +48,12 @@ jobs:
     - name: Update Git submodules
       run: git submodule update --init --recursive
 
+    - name: Set up MinGW
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: 'MINGW64' # Choisissez le système MinGW approprié (MINGW64 ou MINGW32)
+        update: true
+
     - name: Configure CMake
       run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DBUILD_SHARED_LIBS=FALSE -G Ninja
 
