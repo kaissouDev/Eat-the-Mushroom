@@ -1,7 +1,7 @@
 #set(SDL_TEST OFF)
 add_subdirectory(SDL)
 add_subdirectory(fmt)
-add_subdirectory(boxer)
+add_subdirectory(Boxer)
 
 # Create a shared library for 3rdparty
 add_library(3rdparty INTERFACE)
