@@ -40,32 +40,6 @@ jobs:
       with:
         name: Windows-Msvc
         path: ${{github.workspace}}/build/bin
-  Windows-Mingw-Build:
-    runs-on: windows-latest
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Update Git submodules
-      run: git submodule update --init --recursive
-
-    - name: Configure CMake
-      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DBUILD_SHARED_LIBS=FALSE -G "Ninja"
-
-    - name: Build
-      run: |
-        cd build
-        cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
-      
-    - name: Test
-      run: |
-        echo "Test Coming Soon..."
-
-    - name: Create Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: Windows-Mingw
-        path: ${{github.workspace}}/build/bin
   Linux-Build:
     runs-on: ubuntu-latest
 
