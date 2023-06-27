@@ -2,9 +2,10 @@ name: Build
 
 on:
   push:
-    branches: [master]
+    branches: [ "master" ]
   pull_request:
-    branches: [master]
+    branches: [ "master" ]
+
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
@@ -24,12 +25,10 @@ jobs:
         arch: 'x64'
 
     - name: Configure CMake
-      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_IGNORE_PATH=C:\ProgramData\chocolatey\bin -DBUILD_SHARED_LIBS=FALSE -G "Ninja"
+      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_IGNORE_PATH=C:\ProgramData\chocolatey\bin -DCMAKE_BUILD_TYPE=RelWithDebInfo -G "Ninja"
 
     - name: Build
-      run: |
-        cd build
-        cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
+      run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
       
     - name: Test
       run: |
@@ -50,11 +49,12 @@ jobs:
       run: git submodule update --init --recursive
 
     - name: Configure CMake
+
       run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=FALSE -DCMAKE_C_COMPILER=C:/ProgramData/chocolatey/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/ProgramData/chocolatey/bin/g++.exe -G "Ninja"
 
     - name: Build
       run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
-
+    
     - name: Test
       run: |
         echo "Test Coming Soon..."
@@ -79,12 +79,10 @@ jobs:
           sudo apt-get install -y g++ clang libc++-dev libc++abi-dev cmake ninja-build libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libfontconfig1-dev libxrandr-dev libxinerama-dev libgtk-3-dev
 
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_SHARED_LIBS=FALSE -G "Ninja" 
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja" 
 
       - name: Build
-        run: |
-          cd build 
-          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
         run: |
@@ -108,12 +106,10 @@ jobs:
         run: brew install ninja
 
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_SHARED_LIBS=FALSE -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 
       - name: Build
-        run: |
-          cd build
-          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
         run: |
@@ -137,12 +133,10 @@ jobs:
         run: brew install ninja
 
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_SHARED_LIBS=FALSE -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Ninja" -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 
       - name: Build
-        run: |
-          cd build
-          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Test
         run: |

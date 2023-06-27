@@ -1,52 +1,97 @@
-//
-//  KaissouInc / KadjFoundation
-//          (c) 2023
-//  ---------------------------
-//      * main.cpp
-//
-
-// Example program:
-// Using SDL2 to create an application window
-
-#include <SDL3/SDL.h>
-#include <stdio.h>
-#include <fmt/core.h>
-
-int main(int argc, char* argv[]) {
-
-    SDL_Window *window;                    // Declare a pointer
-
-    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
-    SDL_Renderer* renderer;
-    SDL_Event event;
-    int isRunning = 1;
-
-    // Create an application window with the following settings:
-    window = SDL_CreateWindow(
-        "Eat-The-Mushroom (5.X dev)",                  // window title
-        800,                               // width, in pixels
-        600,                               // height, in pixels
-        SDL_WINDOW_OPENGL                 // flags - see below
-    );
+/******************************************
+*          Eat The Mushroom
+*               MIT
+*******************************************
+*   (c) Kaissou || All right reserved!
+*              main.cpp
+*******************************************
+*             03/06/2023
+*******************************************/
 
 
-    renderer = SDL_CreateRenderer(window, NULL, 0);
+#include "init.hpp"
+#include "input.hpp"
+#include <cmath>
 
-    while (isRunning) {
-        // Gestion des événements
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_EVENT_QUIT) {
-                isRunning = 0;
-            }
-        }
-        SDL_RenderClear(renderer);
-        SDL_SetRenderDrawColor(renderer, 0, 0, 161, 255);
-        SDL_RenderPresent(renderer);
+//load textures
+
+using namespace std;
+using namespace fmt;
+
+
+void _DEBUG_(InitClass initclass){
+    print("InitWindow ..\n");
+    print("The Maximum framewrate is : 60.0fps\n");
+    print("Desktop Version\n");
+    
+    if (!initclass.mushroom.id || !initclass.player.id){
+        print("texture not load...\n");
     }
-    // Close and destroy the window
-    SDL_DestroyWindow(window);
+    else{
+        print("texture load !\n");
+    }
 
-    // Clean up
-    SDL_Quit();
+}
+
+
+int main(int argc, char ** argv){
+
+    SetTraceLogLevel(LOG_NONE);
+    InitWindowClass initwindow;
+    initwindow.InitWindowFunctions();
+    InitClass initclass;
+    Move move;
+
+    _DEBUG_(initclass);
+
+    float distance = 0.0f;
+
+    initclass.GameStarted = false;
+
+    Vector2 position = {0, 500};
+    const float playerSpeed = 300.0f;
+
+    while(!WindowShouldClose()){
+        BeginDrawing();
+        if(initclass.GameStarted == false){
+            ClearBackground(BLACK);
+            initclass.TitleScreen();
+        }
+        else if(initclass.GameStarted == true)
+        {
+            float deltaTime = GetFrameTime();
+            ClearBackground(BLUE);
+            DrawText(TextFormat("Health = %d", initclass.vie), 269, 28, 42, BLACK);
+            DrawTexture(initclass.mushroom, initclass.PosX, initclass.PosY, WHITE);
+            DrawTexture(initclass.player, position.x, position.y, WHITE);
+        
+            if (IsKeyDown(KEY_RIGHT)) position.x += playerSpeed * deltaTime;
+            if (IsKeyDown(KEY_LEFT)) position.x -= playerSpeed * deltaTime;
+            if (IsKeyDown(KEY_DOWN)) position.y += playerSpeed * deltaTime;
+            if (IsKeyDown(KEY_UP)) position.y -= playerSpeed * deltaTime;
+            
+            //only work on windows!
+            distance = sqrt(pow(position.x - initclass.PosX, 2) + pow(position.y - initclass.PosY, 2));
+            if(distance < 50) {
+
+                initclass.vie++;
+
+                UnloadTexture(initclass.mushroom);
+
+       
+                initclass.PosX = GetRandomValue(0, GetScreenWidth() - initclass.mushroom.width);
+                initclass.PosY = GetRandomValue(0, GetScreenHeight() - initclass.mushroom.height);
+
+     
+                initclass.mushroom = LoadTexture("res/mushroom.png");
+                
+            }
+        
+        }
+        EndDrawing();
+    }
+
+    UnloadTexture(initclass.mushroom);
+    CloseWindow();
     return 0;
 }

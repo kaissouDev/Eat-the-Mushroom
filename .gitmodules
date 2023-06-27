@@ -8,6 +8,3 @@
 [submodule "3rdparty/Boxer"]
 	path = 3rdparty/Boxer
 	url = https://github.com/aaronmjacobs/Boxer.git
-[submodule "3rdparty/SDL"]
-	path = 3rdparty/SDL
-	url = https://github.com/libsdl-org/SDL.git
