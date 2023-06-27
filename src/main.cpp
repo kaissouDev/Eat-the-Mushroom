@@ -1,55 +1,42 @@
-//
-//  KaissouInc / KadjFoundation
-//          (c) 2023
-//  ---------------------------
-//      * main.cpp
-//
-
-// Example program:
-// Using SDL2 to create an application window
-
 #include <SDL3/SDL.h>
-#include <stdio.h>
-#include <fmt/core.h>
-
-int main(int argc, char* argv[]) {
-
-    SDL_Window *window;                    // Declare a pointer
-
-    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
-    SDL_Renderer* renderer;
-    SDL_Event event;
-    int isRunning = 1;
-
-    // Create an application window with the following settings:
-    window = SDL_CreateWindow(
-        "Eat-The-Mushroom (5.X dev)",                  // window title
-        800,                               // width, in pixels
-        600,                               // height, in pixels
-        SDL_WINDOW_OPENGL                 // flags - see below
-    );
+#include <iostream>
 
 
-    renderer = SDL_CreateRenderer(window, NULL, 0);
+// fonction de base
+int main(int argc, char* argv[])
+{
+        SDL_Window* window;
+        SDL_Renderer* renderer;
 
-    while (isRunning) {
-        // Gestion des événements
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_EVENT_QUIT) {
-                isRunning = 0;
-            }
-        }
+        /* Initialize SDL. */
+        if (SDL_Init(SDL_INIT_VIDEO) < 0)
+                return 1;
 
-        // Effacer l'écran
+        /* Create the window where we will draw. */
+        window = SDL_CreateWindow(
+            "An SDL2 window",                  // window title
+            640,                               // width, in pixels
+            480,                               // height, in pixels
+            SDL_WINDOW_OPENGL                  // flags - see below
+        );
+
+        /* We must call SDL_CreateRenderer in order for draw calls to affect this window. */
+        renderer = SDL_CreateRenderer(window, NULL, 0);
+
+        /* Select the color for drawing. It is set to red here. */
+        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+
+        /* Clear the entire screen to our selected color. */
         SDL_RenderClear(renderer);
-        SDL_SetRenderDrawColor(renderer, 0, 0, 161, 255);
-        // Mettre à jour l'affichage
-        SDL_RenderPresent(renderer);
-    }
-    // Close and destroy the window
-    SDL_DestroyWindow(window);
 
-    // Clean up
-    SDL_Quit();
-    return 0;
+        /* Up until now everything was drawn behind the scenes.
+           This will show the new, red contents of the window. */
+        SDL_RenderPresent(renderer);
+
+        /* Give us time to see the window. */
+        SDL_Delay(5000);
+
+        /* Always be sure to clean up */
+        SDL_Quit();
+        return 0;
 }
