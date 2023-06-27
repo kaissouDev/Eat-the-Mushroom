@@ -51,7 +51,7 @@ jobs:
       run: git submodule update --init --recursive
 
     - name: Configure CMake
-      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DBUILD_SHARED_LIBS=FALSE -G Ninja
+      run: cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DBUILD_SHARED_LIBS=FALSE -G "Ninja"
 
     - name: Build
       run: |
