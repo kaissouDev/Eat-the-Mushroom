@@ -16,9 +16,9 @@ int main(int argc, char* argv[]) {
 
     SDL_Window *window;                    // Declare a pointer
 
-    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
     SDL_Renderer* renderer;
     SDL_Event event;
+    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
     int isRunning = 1;
 
     // Create an application window with the following settings:
@@ -45,8 +45,8 @@ int main(int argc, char* argv[]) {
         SDL_RenderPresent(renderer);
     }
     // Close and destroy the window
+    SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
-
     // Clean up
     SDL_Quit();
     return 0;
