@@ -26,11 +26,11 @@ int main(int argc, char* argv[]) {
         "Eat-The-Mushroom (5.X dev)",                  // window title
         800,                               // width, in pixels
         600,                               // height, in pixels
-        SDL_WINDOW_OPENGL                 // flags - see below
+        0                // flags - see below
     );
 
 
-    renderer = SDL_CreateRenderer(window, NULL, 0);
+    renderer = SDL_CreateRenderer(window, NULL, SDL_RENDERER_ACCELERATED);
 
     while (isRunning) {
         // Gestion des événements
@@ -39,8 +39,9 @@ int main(int argc, char* argv[]) {
                 isRunning = 0;
             }
         }
-        SDL_RenderClear(renderer);
+        
         SDL_SetRenderDrawColor(renderer, 0, 0, 161, 255);
+        SDL_RenderClear(renderer);
         SDL_RenderPresent(renderer);
     }
     // Close and destroy the window
