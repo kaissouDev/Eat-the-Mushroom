@@ -4,7 +4,5 @@
 // include basic c++ library
 #include <iostream>
 
-// include fmt library
-#include <fmt/format.h>
 
 

@@ -1,6 +1,5 @@
 #include "main.hpp"
 #include "game.h"
-#include "core.h"
 
 void Game::createwindow(){
     //Declare pointers
