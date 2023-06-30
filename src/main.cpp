@@ -1,12 +1,11 @@
 //
-//  KaissouInc / KadjFoundation
-//          (c) 2023
-//  ---------------------------
-//      * main.cpp
+//  KaissouDev
+//  (c) 2023  - *main.cpp
 //
 
 #include "main.hpp"
 #include "game.h"
+#include "color.h"
 
 
 int main(int argc, char* argv[]) {

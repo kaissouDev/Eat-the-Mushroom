@@ -1,3 +1,9 @@
+//
+//  KaissouDev
+//  (c) 2023  - *game.cpp
+//
+
+
 #include "main.hpp"
 #include "game.h"
 
@@ -26,7 +32,7 @@ void Game::checkerror(SDL_Window* window){
         //print
     }
     else{
-        printf("hello world");
+        fmt::print("hello fmt");
     }
 }
 

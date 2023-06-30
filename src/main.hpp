@@ -1,3 +1,10 @@
+//
+//  KaissouDev
+//  (c) 2023  - *main.hpp
+//
+
+
+
 // include sdl
 #include <SDL3/SDL.h>
 

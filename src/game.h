@@ -1,3 +1,8 @@
+//
+//  KaissouDev
+//  (c) 2023  - *game.h
+//
+
 #include "main.hpp"
 
 class Game{
