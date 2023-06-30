@@ -28,8 +28,6 @@ void Game::checkerror(SDL_Window* window){
     else{
         printf("hello world");
     }
-
-
 }
 
 
