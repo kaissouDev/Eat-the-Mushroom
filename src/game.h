@@ -4,6 +4,6 @@ class Game{
     public:
         void run();
         void createwindow();
-        void checkerror();
+        void checkerror(SDL_Window* window);
     private:
 };

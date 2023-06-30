@@ -5,6 +5,6 @@
 #include <iostream>
 
 // include fmt library
-#include <fmt/core.h>
+#include <fmt/format.h>
 
 
