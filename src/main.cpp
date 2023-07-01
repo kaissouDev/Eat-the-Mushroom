@@ -3,14 +3,14 @@
 //  (c) 2023  - *main.cpp
 //
 
-#include "main.hpp"
+#include "main.h"
 #include "game.h"
 #include "color.h"
 
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[], SDL_Window* window, SDL_Renderer* renderer) {
     
     Game game;
-    game.run();
+    game.run(window, renderer);
     
 }

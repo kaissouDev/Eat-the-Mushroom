@@ -1,5 +1,6 @@
 #set(SDL_TEST OFF)
 add_subdirectory(SDL)
+add_subdirectory(SDL_image)
 add_subdirectory(fmt)
 add_subdirectory(Boxer)
 
@@ -9,6 +10,7 @@ add_library(3rdparty INTERFACE)
 # Link library
 target_link_libraries(3rdparty INTERFACE 
     SDL3::SDL3
+    SDL3_image::SDL3_image
     fmt::fmt
     Boxer
 )

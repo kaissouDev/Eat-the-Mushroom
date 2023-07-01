@@ -25,10 +25,13 @@ endif()
 
 add_subdirectory(3rdparty)
 
+include_directories(src)
+
 # Create the executable target
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/game.cpp
+    src/log.cpp
 )
 
 # Link the 3rdparty library to the executable target

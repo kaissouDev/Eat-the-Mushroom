@@ -4,8 +4,12 @@
 //
 
 
-#include "main.hpp"
+#include "main.h"
 #include "game.h"
+
+void Game::createrenderer(SDL_Renderer*& renderer, SDL_Window* window){
+    renderer = SDL_CreateRenderer(window, "direct3d11", SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+}
 
 void Game::createwindow(){
     //Declare pointers
@@ -21,22 +25,21 @@ void Game::createwindow(){
         0
     );
 
-    checkerror(window);
+    createrenderer(renderer, window);
+
+
+    SDL_SetRenderDrawColor(renderer, 26, 118, 255, 0.83);
+    SDL_RenderClear(renderer);
+    SDL_RenderPresent(renderer);
+
     SDL_Delay(3000);
 
     SDL_DestroyWindow(window);
 }
 
-void Game::checkerror(SDL_Window* window){
-    if(window == nullptr){
-        //print
-    }
-    else{
-        fmt::print("hello fmt");
-    }
-}
 
 
-void Game::run(){
+void Game::run(SDL_Window* window, SDL_Renderer* renderer){
     createwindow();
+    log(window, renderer);
 }
