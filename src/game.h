@@ -7,7 +7,7 @@
 
 class Game{
     public:
-        void run(SDL_Window* window, SDL_Renderer* renderer);
+        void run();
         void createwindow();
         void createrenderer(SDL_Renderer*& renderer, SDL_Window* window);
         void loadtexture();

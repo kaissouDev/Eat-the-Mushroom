@@ -26,7 +26,7 @@ void Game::createwindow(){
     );
 
     createrenderer(renderer, window);
-
+    log(window, renderer);
 
     SDL_SetRenderDrawColor(renderer, 26, 118, 255, 0.83);
     SDL_RenderClear(renderer);
@@ -39,7 +39,6 @@ void Game::createwindow(){
 
 
 
-void Game::run(SDL_Window* window, SDL_Renderer* renderer){
+void Game::run(){
     createwindow();
-    log(window, renderer);
 }
