@@ -22,4 +22,4 @@ if you want you can contribute or make a pull request to help the project!
 
 
 
-<div align="center"><b>---- KaissouDev (c) 2023"> ----</b></div>
+<div align="center"><b>---- KaissouDev (c) 2023 ----</b></div>
