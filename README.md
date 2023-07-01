@@ -11,9 +11,9 @@ if you want you can contribute or make a pull request to help the project!
 
 ## <b>How To compile ?</b>
 
-- [Compile for windows](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-linux.md)
-- [Compile for linux](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-windows.md)
-- [Compile for macos](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-windows.md)
+- [Compile for windows](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-windows.md)
+- [Compile for linux](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-linux.md)
+- [Compile for macos](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-macos.md)
 
 ## <b>Licenses</b>
 
