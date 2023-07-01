@@ -41,7 +41,9 @@ int main(int argc, char ** argv){
     initwindow.InitWindowFunctions();
     InitClass initclass;
     Move move;
+    Image icon = LoadImage("res/icon.png");
 
+    SetWindowIcon(icon);
     _DEBUG_(initclass);
 
     float distance = 0.0f;
@@ -61,7 +63,7 @@ int main(int argc, char ** argv){
         {
             float deltaTime = GetFrameTime();
             ClearBackground(BLUE);
-            DrawText(TextFormat("Health = %d", initclass.vie), 269, 28, 42, BLACK);
+            DrawText(TextFormat("Health = %d", initclass.vie), 269, 28, 42, WHITE);
             DrawTexture(initclass.mushroom, initclass.PosX, initclass.PosY, WHITE);
             DrawTexture(initclass.player, position.x, position.y, WHITE);
         
@@ -70,7 +72,6 @@ int main(int argc, char ** argv){
             if (IsKeyDown(KEY_DOWN)) position.y += playerSpeed * deltaTime;
             if (IsKeyDown(KEY_UP)) position.y -= playerSpeed * deltaTime;
             
-            //only work on windows!
             distance = sqrt(pow(position.x - initclass.PosX, 2) + pow(position.y - initclass.PosY, 2));
             if(distance < 50) {
 
