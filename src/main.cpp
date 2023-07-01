@@ -8,7 +8,7 @@
 #include "color.h"
 
 
-int main(int argc, char* argv[], SDL_Window* window, SDL_Renderer* renderer) {
+int main(int argc, char** argv[], SDL_Window* window, SDL_Renderer* renderer) {
     
     Game game;
     game.run(window, renderer);
