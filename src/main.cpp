@@ -11,14 +11,14 @@
 
 #include "init.hpp"
 #include "input.hpp"
-#include <cmath>
+#include "main.hpp"
 
 //load textures
 
 using namespace std;
 using namespace fmt;
 
-
+/*
 void _DEBUG_(InitClass initclass){
     print("InitWindow ..\n");
     print("The Maximum framewrate is : 60.0fps\n");
@@ -137,7 +137,7 @@ static void drawPlayer ( Texture2D &Texture, Vector2 &position, uint16_t rotatio
 	};
 	DrawTextureEx( Texture, newPosition, rotation, 1.0f, WHITE);
 }
-
+*/
 int main(int argc, char ** argv){
 
     SetTraceLogLevel(LOG_NONE);
@@ -148,7 +148,7 @@ int main(int argc, char ** argv){
     Image icon = LoadImage("res/icon.png");
 
     SetWindowIcon(icon);
-    _DEBUG_(initclass);
+    //_DEBUG_(initclass);
 
     float distance = 0.0f;
 
