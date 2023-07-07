@@ -28,6 +28,7 @@ add_subdirectory(3rdparty)
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/game.cpp
+    src/player_rotation.cpp
 )
 
 # Link the 3rdparty library to the executable target

@@ -2,6 +2,7 @@
 
 class Game{
     public:
+        Game();
         Texture2D mushroom;
         Texture2D player;
         int PosX;

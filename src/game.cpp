@@ -4,7 +4,7 @@
 #include <iostream>
 
 void Game::TitleScreen(){
-    ClearBackground(BLACK);
+    ClearBackground(BLUE);
     DrawText("Press Start To Play!", 50, 500, 64, WHITE);
     if(IsKeyPressed(KEY_SPACE)){
         fmt::print("space test");
@@ -21,7 +21,7 @@ void Game::Gameloop(){
     while(!WindowShouldClose()){
         BeginDrawing();
         //TitleScreen();
-
+        ClearBackground(BLUE);
         drawPlayer(player, position, playerRotation);
         uint8_t playerDirection = pr.manageMovement( position, playerSpeed, deltaTime);
 
