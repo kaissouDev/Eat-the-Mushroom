@@ -1,5 +1,6 @@
 #include "game.hpp"
 #include "main.hpp"
+#include "player_rotation.hpp"
 #include <iostream>
 
 void Game::TitleScreen(){
@@ -12,9 +13,18 @@ void Game::TitleScreen(){
 }
 
 void Game::Gameloop(){
+    PlayerRotation pr;
+    Vector2 position = {0, 500};
+    const float playerSpeed = 300.0f;
+    float deltaTime = GetFrameTime();
+
     while(!WindowShouldClose()){
         BeginDrawing();
-        TitleScreen();
+        //TitleScreen();
+
+        drawPlayer(player, position, playerRotation);
+        uint8_t playerDirection = pr.manageMovement( position, playerSpeed, deltaTime);
+
         EndDrawing();
     }
 }
