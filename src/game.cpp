@@ -3,6 +3,13 @@
 #include "player_rotation.hpp"
 #include <iostream>
 
+Game::Game()
+{  
+    mushroom = LoadTexture("res/mushroom.png");
+    player = LoadTexture("res/player.png");
+};
+
+
 void Game::TitleScreen(){
     ClearBackground(BLUE);
     DrawText("Press Start To Play!", 50, 500, 64, WHITE);
@@ -32,6 +39,8 @@ void Game::Gameloop(){
 void Game::CreateWindow(){
     InitWindow(800, 600, "Eat-the-Mushroom");
     Gameloop();
+    UnloadTexture(player);
+    UnloadTexture(mushroom);
     CloseWindow();
 }
 
