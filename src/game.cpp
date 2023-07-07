@@ -1,10 +1,7 @@
 #include "game.hpp"
+#include "main.hpp"
 #include <iostream>
 
-/*Game::Game()
-{
-
-}*/
 
 void Game::Gameloop(){
     while(!WindowShouldClose()){
