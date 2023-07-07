@@ -1,3 +1,10 @@
+//
+//	*player_rotation.cpp
+//
+//	KaissouDev | Eat-the-Mushroom 
+//	(c) 2023
+//
+
 #include "game.hpp"
 #include "main.hpp"
 
