@@ -7,7 +7,7 @@ is a game developed by myself,
 it's my first real game in c++, 
 if you want you can contribute or make a pull request to help the project!
 
-![image](https://github.com/kaissouDev/Eat-the-Mushroom/assets/93447388/5c84a3ee-6cce-4b31-b757-d560f2f626ca)
+![image](https://github.com/kaissouDev/Eat-the-Mushroom/assets/93447388/41638acd-d4b2-439c-bc73-c6c9f5c17979)
 
 ## <b>How To compile ?</b>
 
