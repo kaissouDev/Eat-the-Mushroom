@@ -7,12 +7,10 @@
 *******************************************
 *             28/06/2023
 *******************************************/
-
-
-#include "init.hpp"
-#include "input.hpp"
 #include "main.hpp"
+#include "game.hpp"
 
+#include <iostream>
 //load textures
 
 using namespace std;
@@ -140,7 +138,7 @@ static void drawPlayer ( Texture2D &Texture, Vector2 &position, uint16_t rotatio
 */
 int main(int argc, char ** argv){
 
-    SetTraceLogLevel(LOG_NONE);
+    /*SetTraceLogLevel(LOG_NONE);
     InitWindowClass initwindow;
     initwindow.InitWindowFunctions();
     InitClass initclass;
@@ -169,11 +167,11 @@ int main(int argc, char ** argv){
             ClearBackground(BLUE);
             DrawText(TextFormat("Health = %d", initclass.vie), 269, 28, 42, WHITE);
             DrawTexture(initclass.mushroom, initclass.PosX, initclass.PosY, WHITE);
-	    drawPlayer( initclass.player, position, initclass.playerRotation);    
+	    //drawPlayer( initclass.player, position, initclass.playerRotation);    
        
-	    uint8_t playerDirection = manageMovement( position, playerSpeed, deltaTime);
+	    //uint8_t playerDirection = manageMovement( position, playerSpeed, deltaTime);
            
-	    manageRotation(  initclass.playerRotation, playerDirection );
+	    //manageRotation(  initclass.playerRotation, playerDirection );
 
             distance = sqrt(pow(position.x - initclass.PosX, 2) + pow(position.y - initclass.PosY, 2));
             if(distance < 50) {
@@ -196,6 +194,10 @@ int main(int argc, char ** argv){
     }
 
     UnloadTexture(initclass.mushroom);
-    CloseWindow();
+    CloseWindow();*/
+
+	Game game;
+
+	game.RunGame();
     return 0;
 }
