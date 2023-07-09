@@ -11,23 +11,28 @@
 #include <iostream>
 
 void Game::DrawObject(){
+    Timer = 0000;
     DrawText(TextFormat("Health = %d", Health), 269, 28, 42, WHITE);
+    DrawText(TextFormat("Timer = %d", Timer), 269, 75, 42, WHITE);
     DrawTexture(mushroom, PosX, PosY, WHITE);
 }
 
-void Game::TitleScreen(){
+/*void Game::TitleScreen(){
     ClearBackground(BLUE);
     DrawText("Press Start To Play!", 50, 500, 64, WHITE);
     if(IsKeyPressed(KEY_SPACE)){
         fmt::print("space test");
         ClearBackground(WHITE);
     }
-}
+}*/
 
 void Game::Gameloop(){
     PlayerRotation pr;
     Vector2 position = {0, 500};
     const float playerSpeed = 300.0f;
+    Health = 0;
+    PosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
+    PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
 
     while(!WindowShouldClose()){
         BeginDrawing();
@@ -68,16 +73,8 @@ void Game::CreateWindow(){
     icon = LoadImage("res/icon.png");
     SetWindowIcon(icon);
 
-    // check operating system
-    #if defined(_WIN32) || defined(__linux__)
-        mushroom = LoadTexture("res/mushroom.png");
-        player = LoadTexture("res/player.png");
-        fmt::print("Load from Windows or Linux");
-    #elif defined(__APPLE__)
-        mushroom = LoadTexture("../Resources/res/res/mushroom.png");
-        player = LoadTexture("../Resources/res/res/player.png");
-        fmt::print("Load from macOS");
-    #endif
+    mushroom = LoadTexture("res/mushroom.png");
+    player = LoadTexture("res/player.png");
     
     Gameloop();
     UnloadTexture(player);

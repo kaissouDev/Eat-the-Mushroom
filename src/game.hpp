@@ -15,6 +15,7 @@ class Game{
         int PosX;
         int PosY;
         int Health;
+		int Timer;
 
         uint16_t playerRotation = 0;
         bool GameStarted;
