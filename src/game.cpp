@@ -11,9 +11,7 @@
 #include <iostream>
 
 void Game::DrawObject(){
-    Timer = 0000;
     DrawText(TextFormat("Health = %d", Health), 269, 28, 42, WHITE);
-    DrawText(TextFormat("Timer = %d", Timer), 269, 75, 42, WHITE);
     DrawTexture(mushroom, PosX, PosY, WHITE);
 }
 
@@ -33,10 +31,13 @@ void Game::Gameloop(){
     Health = 0;
     PosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
     PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
+    int startTime = GetTime();
+
 
     while(!WindowShouldClose()){
         BeginDrawing();
         float deltaTime = GetFrameTime();
+        
         //TitleScreen();
         ClearBackground(BLUE);
         DrawObject();
@@ -45,6 +46,25 @@ void Game::Gameloop(){
         pr.manageRotation(  playerRotation, playerDirection );
 
         float distance = 0.0f;
+        
+        int currentTime = GetTime() - startTime;
+        int timeLeft = 10 - currentTime;
+        if (timeLeft <= 0)
+        {
+            // Le timer est terminé, faire quelque chose ici
+            // Par exemple, afficher un message à l'écran
+            UnloadTexture(player);
+            UnloadTexture(mushroom);
+            ClearBackground(WHITE);
+            DrawText("Game-Over ...", 269, 75, 42, RED);
+
+        }
+        else
+        {
+            // Afficher le temps restant
+            DrawText(TextFormat("Timer : %02ds", timeLeft), 269, 75, 42, WHITE);
+        }
+
 
         distance = sqrt(pow(position.x - PosX, 2) + pow(position.y - PosY, 2));
         if(distance < 50) {
@@ -67,6 +87,8 @@ void Game::Gameloop(){
 }
 
 void Game::CreateWindow(){
+    SetTraceLogLevel(LOG_NONE);
+    
     InitWindow(800, 600, "Eat-the-Mushroom");
     
     // set the window icon
