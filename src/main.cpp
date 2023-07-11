@@ -8,14 +8,18 @@
 #include "main.hpp"
 #include "game.hpp"
 
-#ifdef _WIN32
-    #include <windows.h>
-#endif
 
 #include <iostream>
 
-int main(int argc, char* argv[]){
-	
+#ifdef WIN32
+	#include <Windows.h>
+	int wWinMain(HINSTANCE hInst, HINSTANCE hPreInst, LPWSTR nCmdLine, int nCmdShow)
+#endif
+#ifndef WIN32
+	int main(int argc, char **argv)
+#endif
+
+{	
 	Game game;
 
 	game.RunGame();
