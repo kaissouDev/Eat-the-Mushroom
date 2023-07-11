@@ -21,6 +21,34 @@ class PlayerRotation{
             DOWN_LEFT = DOWN | LEFT
         };
 
+        static void manageRotation( uint16_t &rotation, uint8_t rotationFlags )
+        {
+            switch (rotationFlags) {
+                case PlayerDirectionEnum::RIGHT:
+                    rotation = 0;
+                    break;
+                case PlayerDirectionEnum::LEFT:
+                    rotation = 180;
+                    break;
+                case PlayerDirectionEnum::UP:
+                    rotation = 270;
+                    break;
+                case PlayerDirectionEnum::DOWN:
+                    rotation = 90;
+                    break;
+                case PlayerDirectionEnum::UP_RIGHT:
+                    rotation = 315;
+                    break;
+                case PlayerDirectionEnum::DOWN_RIGHT:
+                    rotation = 45;
+                    break;
+                case PlayerDirectionEnum::UP_LEFT:
+                    rotation = 225;
+                    break;
+                case PlayerDirectionEnum::DOWN_LEFT:
+                    rotation = 135;
+            }
+        }
 
         static uint8_t manageMovement( Vector2 &position, const float &playerSpeed, float &deltaTime )
         {
