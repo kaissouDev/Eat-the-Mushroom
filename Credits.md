@@ -4,8 +4,9 @@ here's everyone who's taking part in the project!
 
 <b>Owner : </b>
 
-Kaïs L. (kaissoudev)
+- [@KaissouDev](https://github.com/kaissouDev)
 
 <b>Contributors : </b>
 
-Monsterduty
+- [@Monsterduty](https://github.com/Monsterduty) 
+- [@colbySullivan](https://github.com/colbySullivan)
