@@ -11,14 +11,7 @@
 
 #include <iostream>
 
-#ifdef WIN32
-	#include <Windows.h>
-	int wWinMain(HINSTANCE hInst, HINSTANCE hPreInst, LPWSTR nCmdLine, int nCmdShow)
-#endif
-#ifndef WIN32
-	int main(int argc, char **argv)
-#endif
-
+int main(int argc, char **argv)
 {	
 	Game game;
 
