@@ -8,6 +8,10 @@
 #include "main.hpp"
 #include "game.hpp"
 
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
 #include <iostream>
 
 int main(int argc, char* argv[]){
