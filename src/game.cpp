@@ -42,7 +42,7 @@ void Game::Gameloop(){
         ClearBackground(BLUE);
         DrawObject();
         drawPlayer(player, position, playerRotation);
-        uint8_t playerDirection = pr.manageMovement( position, playerSpeed, deltaTime);
+        uint8_t playerDirection = pr.manageMovement( position, playerSpeed, deltaTime, player);
         pr.manageRotation(  playerRotation, playerDirection );
 
         float distance = 0.0f;
