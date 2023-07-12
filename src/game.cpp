@@ -5,8 +5,6 @@
 //	(c) 2023
 //
 
-#define and &&
-
 #include "game.hpp"
 #include "main.hpp"
 #include "player_rotation.hpp"
@@ -53,6 +51,7 @@ void Game::Gameloop(){
         int timeLeft = 10 - currentTime;
         
         DrawText(TextFormat("Objective : 3"), 269, 510, 42, WHITE);
+        DrawText(TextFormat("Level : 1"), 269, 560, 32, WHITE);
 
 
         if (timeLeft >= 0) {
