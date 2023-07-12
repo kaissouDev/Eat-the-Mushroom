@@ -49,27 +49,26 @@ static void manageRotation( uint16_t &rotation, uint8_t rotationFlags )
 	}
 }
 
-static uint8_t manageMovement( Vector2 &position, const float &playerSpeed, float &deltaTime )
+static uint8_t manageMovement( Vector2 &position, const float &playerSpeed, float &deltaTime, Texture2D player )
 {
 	uint8_t rotationFlags = 0;
-	int playerSize = 50;
 	    //managing player movement and save rotation flags.
-            if (IsKeyDown(KEY_RIGHT) && position.x < GetScreenWidth() - playerSize)
+            if (IsKeyDown(KEY_RIGHT) && position.x + player.width / 2 < GetScreenWidth())
 	    {
 		    rotationFlags |= PlayerDirectionEnum::RIGHT;
 		    position.x += playerSpeed * deltaTime;
 	    }
-            if (IsKeyDown(KEY_LEFT) && position.x > 0 - playerSize / 2 + 10)
+            if (IsKeyDown(KEY_LEFT) && position.x + player.width / 2 > 0)
 	    {
 		    rotationFlags |= PlayerDirectionEnum::LEFT;
 		    position.x -= playerSpeed * deltaTime;
 	    }
-            if (IsKeyDown(KEY_DOWN) && position.y < GetScreenHeight() - playerSize)
+            if (IsKeyDown(KEY_DOWN) && position.y + player.height / 2 < GetScreenHeight())
 	    {
 		    rotationFlags |= PlayerDirectionEnum::DOWN;
 		    position.y += playerSpeed * deltaTime;
 	    }
-            if (IsKeyDown(KEY_UP) && position.y > 0 - playerSize / 2 + 10)
+            if (IsKeyDown(KEY_UP) && position.y + player.height / 2 > 0)
 	    {
 		    rotationFlags |= PlayerDirectionEnum::UP;
 		    position.y -= playerSpeed * deltaTime;
