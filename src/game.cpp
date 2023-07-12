@@ -5,6 +5,8 @@
 //	(c) 2023
 //
 
+#define and &&
+
 #include "game.hpp"
 #include "main.hpp"
 #include "player_rotation.hpp"
@@ -32,7 +34,7 @@ void Game::Gameloop(){
     PosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
     PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
     int startTime = GetTime();
-
+    
 
     while(!WindowShouldClose()){
         BeginDrawing();
@@ -49,21 +51,25 @@ void Game::Gameloop(){
         
         int currentTime = GetTime() - startTime;
         int timeLeft = 10 - currentTime;
-        if (timeLeft <= 0)
-        {
-            // Le timer est terminé, faire quelque chose ici
-            // Par exemple, afficher un message à l'écran
-            UnloadTexture(player);
-            UnloadTexture(mushroom);
-            ClearBackground(WHITE);
-            DrawText("Game-Over ...", 269, 75, 42, RED);
+        
+        DrawText(TextFormat("Objective : 3"), 269, 510, 42, WHITE);
 
-        }
-        else
-        {
-            // Afficher le temps restant
+
+        if (timeLeft >= 0) {
+            
             DrawText(TextFormat("Timer : %02ds", timeLeft), 269, 75, 42, WHITE);
+
+            if(Health >= 3){
+                DrawText(TextFormat("Objective : 3"), 269, 510, 42, GREEN);
+            }
+            if (timeLeft <= 0 && Health < 3) {
+                UnloadTexture(player);
+                UnloadTexture(mushroom);
+                ClearBackground(WHITE);
+                DrawText("Game Over...", 269, 75, 42, RED);
+            }
         }
+
 
 
         distance = sqrt(pow(position.x - PosX, 2) + pow(position.y - PosY, 2));
