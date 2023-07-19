@@ -31,12 +31,14 @@ if(MSVC)
         src/main.cpp
         src/game.cpp
         src/player_rotation.cpp
+        src/level.cpp
     )
 else()
     add_executable(${PROJECT_NAME}
         src/main.cpp
         src/game.cpp
         src/player_rotation.cpp
+        src/level.cpp
     )
 endif()
 
