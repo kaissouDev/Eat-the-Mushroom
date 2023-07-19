@@ -8,6 +8,7 @@
 #include "game.hpp"
 #include "main.hpp"
 #include "player_rotation.hpp"
+#include "level.hpp"
 #include <iostream>
 
 void Game::DrawObject(){
@@ -25,6 +26,7 @@ void Game::DrawObject(){
 }*/
 
 void Game::Gameloop(){
+    Level level;
     PlayerRotation pr;
     Vector2 position = {0, 500};
     const float playerSpeed = 300.0f;
@@ -32,6 +34,7 @@ void Game::Gameloop(){
     PosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
     PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
     int startTime = GetTime();
+    level.CurrentLevel = 1;
     
 
     while(!WindowShouldClose()){
@@ -39,7 +42,7 @@ void Game::Gameloop(){
         float deltaTime = GetFrameTime();
         
         //TitleScreen();
-        ClearBackground(BLUE);
+        level.CheckLevel();
         DrawObject();
         drawPlayer(player, position, playerRotation);
         uint8_t playerDirection = pr.manageMovement( position, playerSpeed, deltaTime, player);
