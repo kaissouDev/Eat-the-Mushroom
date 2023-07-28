@@ -64,6 +64,12 @@ void Game::Gameloop(){
             if(Health >= 3){
                 DrawText(TextFormat("Objective : 3"), 269, 510, 42, GREEN);
             }
+            if(timeLeft <= 0 && Health >= 3){
+                
+                ++level.CurrentLevel;
+                //DrawText(TextFormat("Timer : %02ds", timeLeft), 269, 75, 42, WHITE);
+
+            }
             if (timeLeft <= 0 && Health < 3) {
                 UnloadTexture(player);
                 UnloadTexture(mushroom);
