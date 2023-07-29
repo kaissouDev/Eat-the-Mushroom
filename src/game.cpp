@@ -35,12 +35,13 @@ void Game::Gameloop(){
     PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
     int startTime = GetTime();
     level.CurrentLevel = 1;
-    
 
     while(!WindowShouldClose()){
         BeginDrawing();
         float deltaTime = GetFrameTime();
         
+        std::cout << Objective << std::endl;
+
         //TitleScreen();
         level.CheckLevel();
         DrawObject();
@@ -53,20 +54,20 @@ void Game::Gameloop(){
         int currentTime = GetTime() - startTime;
         int timeLeft = 10 - currentTime;
         
-        DrawText(TextFormat("Objective : 3"), 269, 510, 42, WHITE);
+        DrawText(TextFormat("Objective : %d", Objective), 269, 510, 42, WHITE);
         DrawText(TextFormat("Level : 1"), 269, 560, 32, WHITE);
 
 
         if (timeLeft >= 0) {
-            
+            Objective = 3;
             DrawText(TextFormat("Timer : %02ds", timeLeft), 269, 75, 42, WHITE);
 
             if(Health >= 3){
-                DrawText(TextFormat("Objective : 3"), 269, 510, 42, GREEN);
+                DrawText(TextFormat("Objective : ", Objective), 269, 510, 42, GREEN);
             }
             if(timeLeft <= 0 && Health >= 3){
-                
-                ++level.CurrentLevel;
+                Objective + 2;
+                //++level.CurrentLevel;
                 //DrawText(TextFormat("Timer : %02ds", timeLeft), 269, 75, 42, WHITE);
 
             }

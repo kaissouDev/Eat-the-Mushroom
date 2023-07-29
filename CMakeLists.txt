@@ -19,7 +19,7 @@ endif()
 
 if(MSVC)
     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
 endif()
 
 
@@ -27,7 +27,7 @@ add_subdirectory(3rdparty)
 
 # Create the executable target
 if(MSVC)
-    add_executable(${PROJECT_NAME} WIN32
+    add_executable(${PROJECT_NAME} #WIN32
         src/main.cpp
         src/game.cpp
         src/player_rotation.cpp

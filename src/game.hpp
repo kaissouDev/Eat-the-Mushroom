@@ -12,6 +12,7 @@ class Game{
         Texture2D mushroom;
         Texture2D player;
         Image icon;
+		int Objective;
         int PosX;
         int PosY;
         int Health;
