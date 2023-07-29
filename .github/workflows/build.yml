@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         tests: [true, false]
-        bin: [Eat-the-Mushroom.exe, Eat-the-Mushroom]
+        bin: [Eat-the-Mushroom.exe]
 
     steps:
       - name: Checkout code
@@ -54,7 +54,7 @@ jobs:
     strategy:
       matrix:
         tests: [true, false]
-        bin: [Eat-the-Mushroom.exe, Eat-the-Mushroom]
+        bin: [Eat-the-Mushroom.exe]
 
     steps:
       - name: Checkout code
