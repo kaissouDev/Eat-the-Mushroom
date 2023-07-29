@@ -17,7 +17,6 @@ jobs:
     strategy:
       matrix:
         tests: [true, false]
-        bin: [Eat-the-Mushroom, Eat-the-Mushroom]
 
     steps:
       - name: Checkout code
@@ -40,9 +39,10 @@ jobs:
         if: ${{ matrix.tests }}
         run: |
           cd ${{ github.workspace }}/build/bin
-          ${{ matrix.bin }} --test
+          Eat-the-Mushroom --test
 
       - name: Create Artifact
+        if: ${{ matrix.tests }}
         uses: actions/upload-artifact@v2
         with:
           name: Windows-Msvc
@@ -54,7 +54,6 @@ jobs:
     strategy:
       matrix:
         tests: [true, false]
-        bin: [Eat-the-Mushroom, Eat-the-Mushroom]
 
     steps:
       - name: Checkout code
@@ -73,9 +72,10 @@ jobs:
         if: ${{ matrix.tests }}
         run: |
           cd ${{ github.workspace }}/build/bin
-          ${{ matrix.bin }} --test
+          Eat-the-Mushroom --test
 
       - name: Create Artifact
+        if: ${{ matrix.tests }}
         uses: actions/upload-artifact@v2
         with:
           name: Windows-Mingw
@@ -87,7 +87,6 @@ jobs:
     strategy:
       matrix:
         tests: [true, false]
-        bin: [Eat-the-Mushroom]
 
     steps:
       - name: Checkout code
@@ -111,10 +110,11 @@ jobs:
         if: ${{ matrix.tests }}
         run: |
           cd ${{ github.workspace }}/build/bin
-          chmod +x ${{ matrix.bin }}
-          ${{ matrix.bin }} --test
+          chmod +x Eat-the-Mushroom
+          ./Eat-the-Mushroom --test
 
       - name: Create Artifact
+        if: ${{ matrix.tests }}
         uses: actions/upload-artifact@v2
         with:
           name: Linux
@@ -126,7 +126,6 @@ jobs:
     strategy:
       matrix:
         tests: [true, false]
-        bin: [Eat-the-Mushroom]
 
     steps:
       - name: Checkout code
@@ -148,10 +147,11 @@ jobs:
         if: ${{ matrix.tests }}
         run: |
           cd ${{ github.workspace }}/build/bin
-          chmod +x ${{ matrix.bin }}
-          ${{ matrix.bin }} --test
+          chmod +x Eat-the-Mushroom
+          ./Eat-the-Mushroom --test
 
       - name: Create Artifact
+        if: ${{ matrix.tests }}
         uses: actions/upload-artifact@v2
         with:
           name: Macos-x86_64
@@ -163,7 +163,6 @@ jobs:
     strategy:
       matrix:
         tests: [true, false]
-        bin: [Eat-the-Mushroom]
 
     steps:
       - name: Checkout code
@@ -185,10 +184,11 @@ jobs:
         if: ${{ matrix.tests }}
         run: |
           cd ${{ github.workspace }}/build/bin
-          chmod +x ${{ matrix.bin }}
-          ${{ matrix.bin }} --test
+          chmod +x Eat-the-Mushroom
+          ./Eat-the-Mushroom --test
 
       - name: Create Artifact
+        if: ${{ matrix.tests }}
         uses: actions/upload-artifact@v2
         with:
           name: Macos-Arm64
