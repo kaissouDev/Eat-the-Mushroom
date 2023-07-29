@@ -33,7 +33,7 @@ jobs:
     - name: Test
       run: |
         cd ${{github.workspace}}/build/bin
-        ./Eat-the-Mushroom --test
+        .\Eat-the-Mushroom --test
 
     - name: Create Artifact
       uses: actions/upload-artifact@v2
@@ -59,7 +59,7 @@ jobs:
     - name: Test
       run: |
         cd ${{github.workspace}}/build/bin
-        ./Eat-the-Mushroom --test
+        .\Eat-the-Mushroom --test
 
     - name: Create Artifact
       uses: actions/upload-artifact@v2
