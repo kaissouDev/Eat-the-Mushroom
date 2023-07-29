@@ -1,6 +1,8 @@
 # Eat-The-Mushroom
 
 [![Build](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml/badge.svg)](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml)
+[![Discord](https://img.shields.io/discord/1128386177808994415.svg?label=Discord&logo=discord)](https://discord.gg/v5uEMzjJ)
+
 
 Eat The Mushroom 
 is a game developed by myself, 
