@@ -17,12 +17,12 @@ void Game::flags(int argc, char* argv[]) { // add the --test argument
     // Parcourir les arguments de la ligne de commande
     for (int i = 1; i < argc; i++) {
         std::string arg = argv[i];
-        if (arg == "--test") {
-            CloseWindow();
+        if (arg == "--test") {    
+            printf("== running ... ==\n");
             printf("test coming soon ...\n");
             printf("\n");
             printf("== passed ! ==");
-
+            CloseWindow();
         }
     }
 
