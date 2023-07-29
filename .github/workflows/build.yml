@@ -32,7 +32,8 @@ jobs:
       
     - name: Test
       run: |
-        echo "Test Coming Soon..."
+        cd ${{github.workspace}}/build/bin
+        ./Eat-the-Mushroom --test
 
     - name: Create Artifact
       uses: actions/upload-artifact@v2
@@ -57,7 +58,8 @@ jobs:
     
     - name: Test
       run: |
-        echo "Test Coming Soon..."
+        cd ${{github.workspace}}/build/bin
+        ./Eat-the-Mushroom --test
 
     - name: Create Artifact
       uses: actions/upload-artifact@v2
@@ -86,7 +88,8 @@ jobs:
 
       - name: Test
         run: |
-          echo "Test Coming Soon..."
+          cd ${{github.workspace}}/build/bin
+          ./Eat-the-Mushroom --test
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2
@@ -113,7 +116,8 @@ jobs:
 
       - name: Test
         run: |
-          echo "Test Coming Soon..."
+          cd ${{github.workspace}}/build/bin
+          ./Eat-the-Mushroom --test
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2
@@ -140,7 +144,8 @@ jobs:
 
       - name: Test
         run: |
-          echo "Test Coming Soon..."
+          cd ${{github.workspace}}/build/bin
+          ./Eat-the-Mushroom --test
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2

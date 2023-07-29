@@ -23,6 +23,7 @@ class Game{
         void Gameloop();
         void TitleScreen();
         void DrawObject();
+		void flags(int argc, char* argv[]);
         static void drawPlayer ( Texture2D &Texture, Vector2 &position, uint16_t rotation )
         {
 	        Vector2 newPosition = position;
