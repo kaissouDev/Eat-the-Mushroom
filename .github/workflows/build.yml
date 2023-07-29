@@ -40,7 +40,7 @@ jobs:
         if: ${{ matrix.tests }}
         run: |
           cd ${{ github.workspace }}/build/bin
-          ./${{ matrix.bin }} --test
+          ${{ matrix.bin }} --test
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2
@@ -73,7 +73,7 @@ jobs:
         if: ${{ matrix.tests }}
         run: |
           cd ${{ github.workspace }}/build/bin
-          ./${{ matrix.bin }} --test
+          ${{ matrix.bin }} --test
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2
@@ -112,7 +112,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}/build/bin
           chmod +x ${{ matrix.bin }}
-          ./${{ matrix.bin }} --test
+          ${{ matrix.bin }} --test
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2
@@ -149,7 +149,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}/build/bin
           chmod +x ${{ matrix.bin }}
-          ./${{ matrix.bin }} --test
+          ${{ matrix.bin }} --test
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2
@@ -186,7 +186,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}/build/bin
           chmod +x ${{ matrix.bin }}
-          ./${{ matrix.bin }} --test
+          ${{ matrix.bin }} --test
 
       - name: Create Artifact
         uses: actions/upload-artifact@v2
