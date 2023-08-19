@@ -11,6 +11,14 @@
 #include "level.hpp"
 #include <iostream>
 
+void Game::GameOver(){
+    UnloadTexture(player);
+    UnloadTexture(mushroom);
+    ClearBackground(WHITE);
+    DrawText("Game Over...", 269, 75, 42, RED); 
+    CloseWindow();
+}
+
 void Game::flags(int argc, char* argv[]) { // add the --test argument
     // Votre code actuel pour la fonction flags ici
 
@@ -90,10 +98,8 @@ void Game::Gameloop(){
 
             }
             if (timeLeft <= 0 && Health < 3) {
-                UnloadTexture(player);
-                UnloadTexture(mushroom);
-                ClearBackground(WHITE);
-                DrawText("Game Over...", 269, 75, 42, RED);
+                //WaitTime(5.0);
+                GameOver();
             }
         }
 
