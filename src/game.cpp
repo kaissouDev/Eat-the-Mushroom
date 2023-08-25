@@ -38,7 +38,6 @@ void Game::flags(int argc, char* argv[]) { // add the --test argument
 }
 
 void Game::DrawObject(){
-    DrawText(TextFormat("Health = %d", Health), 269, 28, 42, WHITE);
     DrawTexture(mushroom, PosX, PosY, WHITE);
 }
 
@@ -54,73 +53,92 @@ void Game::DrawObject(){
 void Game::Gameloop(){
     Level level;
     PlayerRotation pr;
-    Vector2 position = {0, 500};
+    Vector2 position = { 0, 500 };
     const float playerSpeed = 300.0f;
     Health = 0;
     PosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
     PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
     int startTime = GetTime();
     level.CurrentLevel = 1;
-
-    while(!WindowShouldClose()){
-        BeginDrawing();
+    GameRunning = true;
+    float timeLeft = 10;
+    Button buttonExit(DARKBLUE, BLACK, RED, { 300,350, 200,100},std::string("Exit"));
+    Button buttonResume(DARKBLUE, BLACK, GREEN, { 300,200, 200,100 }, std::string("Resume"));
+    while (!WindowShouldClose()) {
         float deltaTime = GetFrameTime();
-        
-        std::cout << Objective << std::endl;
-
+        BeginDrawing();
+        //std::cout << Objective << std::endl;
         //TitleScreen();
-        level.CheckLevel();
-        DrawObject();
-        drawPlayer(player, position, playerRotation);
-        uint8_t playerDirection = pr.manageMovement( position, playerSpeed, deltaTime, player);
-        pr.manageRotation(  playerRotation, playerDirection );
-
-        float distance = 0.0f;
-        
-        int currentTime = GetTime() - startTime;
-        int timeLeft = 10 - currentTime;
-        
-        DrawText(TextFormat("Objective : %d", Objective), 269, 510, 42, WHITE);
-        DrawText(TextFormat("Level : 1"), 269, 560, 32, WHITE);
-
-
-        if (timeLeft >= 0) {
-            Objective = 3;
-            DrawText(TextFormat("Timer : %02ds", timeLeft), 269, 75, 42, WHITE);
-
-            if(Health >= 3){
-                DrawText(TextFormat("Objective : ", Objective), 269, 510, 42, GREEN);
+        if (!GameRunning) {
+            DrawRectangle(0, 0, 800, 600,{60,60,60,1});
+            buttonExit.draw();
+            buttonResume.draw();
+            buttonExit.hover();
+            buttonResume.hover();
+            if (buttonExit.isClicked()) {
+                break;
             }
-            if(timeLeft <= 0 && Health >= 3){
-                Objective + 2;
-                //++level.CurrentLevel;
-                //DrawText(TextFormat("Timer : %02ds", timeLeft), 269, 75, 42, WHITE);
-
+            else if(buttonResume.isClicked()){
+                GameRunning=true;
             }
-            if (timeLeft <= 0 && Health < 3) {
-                //WaitTime(5.0);
-                GameOver();
+            if (IsKeyPressed(KEY_ESCAPE)) {
+                GameRunning = true;
             }
         }
+        else {
+            if (IsKeyPressed(KEY_ESCAPE)) {
+                GameRunning = false;
+            }
+            level.CheckLevel();
+            DrawObject();
+            drawPlayer(player, position, playerRotation);
+            uint8_t playerDirection = pr.manageMovement(position, playerSpeed, deltaTime, player);
+            pr.manageRotation(playerRotation, playerDirection);
+
+            float distance = 0.0f;
+
+            timeLeft -= deltaTime;
+
+            DrawText(TextFormat("Objective : %d", Objective), 269, 510, 42, WHITE);
+            DrawText(TextFormat("Level : 1"), 269, 560, 32, WHITE);
+            DrawText(TextFormat("Health = %d", Health), 269, 28, 42, WHITE);
+
+            if (timeLeft >= 0) {
+                Objective = 3;
+                DrawText(TextFormat("Timer : %02ds", (int)timeLeft), 269, 75, 42, WHITE);
+
+                if (Health >= 3) {
+                    DrawText(TextFormat("Objective : ", Objective), 269, 510, 42, GREEN);
+                }
+                if (timeLeft <= 0 && Health >= 3) {
+                    Objective + 2;
+                    //++level.CurrentLevel;
+                    //DrawText(TextFormat("Timer : %02ds", timeLeft), 269, 75, 42, WHITE);
+                }
+                if (timeLeft <= 0 && Health < 3) {
+                    //WaitTime(5.0);
+                    GameOver();
+                }
+            }
 
 
 
-        distance = sqrt(pow(position.x - PosX, 2) + pow(position.y - PosY, 2));
-        if(distance < 50) {
+            distance = sqrt(pow(position.x - PosX, 2) + pow(position.y - PosY, 2));
+            if (distance < 50) {
 
-            Health++;
+                Health++;
 
-            UnloadTexture(mushroom);
+                UnloadTexture(mushroom);
 
-       
-            PosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
-            PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
 
-     
-            mushroom = LoadTexture("res/mushroom.png");
-                
+                PosX = GetRandomValue(0, GetScreenWidth() - mushroom.width);
+                PosY = GetRandomValue(0, GetScreenHeight() - mushroom.height);
+
+
+                mushroom = LoadTexture("res/mushroom.png");
+
+            }
         }
-
         EndDrawing();
     }
 }
@@ -137,6 +155,8 @@ void Game::CreateWindow(){
     mushroom = LoadTexture("res/mushroom.png");
     player = LoadTexture("res/player.png");
     
+    SetExitKey(0);
+
     Gameloop();
     UnloadTexture(player);
     UnloadTexture(mushroom);

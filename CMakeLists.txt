@@ -32,7 +32,7 @@ if(MSVC)
         src/game.cpp
         src/player_rotation.cpp
         src/level.cpp
-    )
+     "src/Button.cpp" )
 else()
     add_executable(${PROJECT_NAME}
         src/main.cpp

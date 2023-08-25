@@ -6,6 +6,7 @@
 //
 
 #include "main.hpp"
+#include "Button.hpp"
 
 class Game{
     public:
@@ -19,6 +20,7 @@ class Game{
 
         uint16_t playerRotation = 0;
         bool GameStarted;
+		bool GameRunning;
         void CreateWindow();
         void Gameloop();
         void TitleScreen();
