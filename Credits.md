@@ -10,3 +10,4 @@ here's everyone who's taking part in the project!
 
 - [@Monsterduty](https://github.com/Monsterduty) 
 - [@colbySullivan](https://github.com/colbySullivan)
+- [@sebe324](https://github.com/sebe324)

@@ -19,7 +19,7 @@ if you want you can contribute or make a pull request to help the project!
 
 ## <b>Licenses</b>
 
-- [View licences](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/license.md)
+- [View Licenses](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/license.md)
 
 
 ## <b>Credits</b>
