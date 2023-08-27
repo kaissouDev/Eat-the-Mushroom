@@ -1,0 +1,4 @@
+#include <windows.h>
+
+IDR_MYICON ICON "../res/icon.ico"
+

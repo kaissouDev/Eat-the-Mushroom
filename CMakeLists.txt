@@ -27,7 +27,8 @@ add_subdirectory(3rdparty)
 
 # Create the executable target
 if(MSVC)
-    add_executable(${PROJECT_NAME} WIN32
+    add_executable(${PROJECT_NAME} WIN32        
+	    src/Game.rc
         src/main.cpp
         src/game.cpp
         src/player_rotation.cpp
@@ -36,6 +37,7 @@ if(MSVC)
     )        
 else()
     add_executable(${PROJECT_NAME}
+        src/Game.rc
         src/main.cpp
         src/game.cpp
         src/player_rotation.cpp
