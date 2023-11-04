@@ -7,7 +7,7 @@
 ![Pull-request](https://img.shields.io/github/issues-pr/kaissouDev/Eat-the-Mushroom)
 
 ## 🤝 Contributing
-Contributions are welcome! If you have ideas or improvements, feel free to fork the project and submit a pull request. 🛠️
+Contributions are welcome! If you have ideas or improvements, please feel free to fork the project and submit a pull request. 🛠️
 
 <img src="https://github.com/kaissouDev/Eat-the-Mushroom/assets/93447388/41638acd-d4b2-439c-bc73-c6c9f5c17979" width="500">
 
@@ -22,4 +22,16 @@ Contributions are welcome! If you have ideas or improvements, feel free to fork 
 ## 👏 Credits
 - [View Credits](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/Credits.md)
 
-#### kaissouDev © 2023
+## Tested Platforms
+
+| Platform | Status |
+|----------|:------:|
+| Windows  |   ✅   |
+| Linux    |   ✅   |
+| macOS    |   ⚠   |
+
+---
+
+<div align="center">
+kaissouDev © 2023
+</div>
