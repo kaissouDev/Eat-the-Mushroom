@@ -13,8 +13,7 @@
 
 int main(int argc, char **argv)
 {	
-	Game game;
-	game.flags(argc, argv);
+	Game game;
 	game.RunGame();
     return 0;
 }

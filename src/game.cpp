@@ -19,24 +19,6 @@ void Game::GameOver(){
     CloseWindow();
 }
 
-void Game::flags(int argc, char* argv[]) { // add the --test argument
-    // Votre code actuel pour la fonction flags ici
-
-    // Parcourir les arguments de la ligne de commande
-    for (int i = 1; i < argc; i++) {
-        std::string arg = argv[i];
-        if (arg == "--test") {    
-            printf("== running ... ==\n");
-            printf("test coming soon ...\n");
-            printf("\n");
-            printf("== passed ! ==");
-            CloseWindow();
-        }
-    }
-
-    // Reste de votre code pour la fonction flags ici
-}
-
 void Game::DrawObject(){
     DrawTexture(mushroom, PosX, PosY, WHITE);
 }
