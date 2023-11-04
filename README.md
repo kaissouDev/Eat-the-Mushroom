@@ -1,10 +1,6 @@
 # 🍄 Eat-The-Mushroom
 
-[![Build Status](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml/badge.svg)](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml)
-[![Discord Chat](https://img.shields.io/discord/1128386177808994415.svg?label=Join&logo=discord)](https://discord.gg/ypE7yKn6)
-
-## 🎮 About the Game
-Eat The Mushroom is a game developed in C++, my first real foray into game development. 🌟 Dive into a world where you navigate to collect mushrooms and avoid obstacles. Simple, addictive, and fun!
+[![Build](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml/badge.svg)](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml)
 
 ## 🤝 Contributing
 Contributions are welcome! If you have ideas or improvements, feel free to fork the project and submit a pull request. 🛠️
