@@ -1,28 +1,25 @@
-# Eat-The-Mushroom
+# 🍄 Eat-The-Mushroom
 
-[![Build](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml/badge.svg)](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml)
-[![Discord](https://img.shields.io/discord/1128386177808994415.svg?label=Discord&logo=discord)](https://discord.gg/ypE7yKn6)
+[![Build Status](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml/badge.svg)](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml)
+[![Discord Chat](https://img.shields.io/discord/1128386177808994415.svg?label=Join&logo=discord)](https://discord.gg/ypE7yKn6)
 
+## 🎮 About the Game
+Eat The Mushroom is a game developed in C++, my first real foray into game development. 🌟 Dive into a world where you navigate to collect mushrooms and avoid obstacles. Simple, addictive, and fun!
 
-Eat The Mushroom 
-is a game developed by myself, 
-it's my first real game in c++, 
-if you want you can contribute or make a pull request to help the project!
+## 🤝 Contributing
+Contributions are welcome! If you have ideas or improvements, feel free to fork the project and submit a pull request. 🛠️
 
-![image](https://github.com/kaissouDev/Eat-the-Mushroom/assets/93447388/41638acd-d4b2-439c-bc73-c6c9f5c17979)
+![Game Screenshot](https://github.com/kaissouDev/Eat-the-Mushroom/assets/93447388/41638acd-d4b2-439c-bc73-c6c9f5c17979)
 
-## <b>How To compile ?</b>
+## 🛠️ How to Compile?
+- [Compile for Windows](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-windows.md) 🪟
+- [Compile for Linux](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-linux.md) 🐧
+- [Compile for macOS](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-macos.md) 🍎
 
-- [Compile for windows](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-windows.md)
-- [Compile for linux](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-linux.md)
-- [Compile for macos](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-macos.md)
-
-## <b>Licenses</b>
-
+## 🔑 Licenses
 - [View Licenses](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/license.md)
 
-
-## <b>Credits</b>
+## 👏 Credits
 - [View Credits](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/Credits.md)
 
-<div align="center"><b>---- KaissouDev (c) 2023 ----</b></div>
+#### kaissouDev © 2023
