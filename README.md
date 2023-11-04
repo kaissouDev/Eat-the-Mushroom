@@ -5,7 +5,7 @@
 ## 🤝 Contributing
 Contributions are welcome! If you have ideas or improvements, feel free to fork the project and submit a pull request. 🛠️
 
-![Game Screenshot](https://github.com/kaissouDev/Eat-the-Mushroom/assets/93447388/41638acd-d4b2-439c-bc73-c6c9f5c17979)
+<img src="https://github.com/kaissouDev/Eat-the-Mushroom/assets/93447388/41638acd-d4b2-439c-bc73-c6c9f5c17979" width="500">
 
 ## 🛠️ How to Compile?
 - [Compile for Windows](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-windows.md) 
