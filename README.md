@@ -1,6 +1,10 @@
 # 🍄 Eat-The-Mushroom
 
 [![Build](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml/badge.svg)](https://github.com/kaissouDev/Eat-the-Mushroom/actions/workflows/build.yml)
+![Platforms](https://img.shields.io/badge/platforms-Windows%20|%20Linux%20-lightgrey)
+![C++](https://img.shields.io/github/languages/top/kaissouDev/Eat-the-Mushroom)
+![Issues](https://img.shields.io/github/issues/kaissouDev/Eat-the-Mushroom)
+![Pull-request](https://img.shields.io/github/issues-pr/kaissouDev/Eat-the-Mushroom)
 
 ## 🤝 Contributing
 Contributions are welcome! If you have ideas or improvements, feel free to fork the project and submit a pull request. 🛠️
@@ -9,8 +13,8 @@ Contributions are welcome! If you have ideas or improvements, feel free to fork 
 
 ## 🛠️ How to Compile?
 - [Compile for Windows](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-windows.md) 
-- [Compile for Linux](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-linux.md) 🐧
-- [Compile for macOS](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-macos.md) 🍎
+- [Compile for Linux](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-linux.md) 
+- [Compile for macOS (Experimental ⚠)](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/compile-macos.md)
 
 ## 🔑 Licenses
 - [View Licenses](https://github.com/kaissouDev/Eat-the-Mushroom/blob/master/docs/license.md)
