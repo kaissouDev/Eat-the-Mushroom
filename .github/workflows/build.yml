@@ -34,7 +34,7 @@ jobs:
       run: |
         echo "Test Coming Soon..."
     - name: Create Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: Windows-Msvc
         path: ${{github.workspace}}/build/bin
@@ -64,7 +64,7 @@ jobs:
       run: |
         echo "Test Coming Soon..."
     - name: Create Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: Windows-Mingw
         path: ${{ github.workspace }}/build/bin
@@ -91,7 +91,7 @@ jobs:
         run: |
           echo "Test Coming Soon..."
       - name: Create Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Linux
           path: ${{github.workspace}}/build/bin
@@ -117,7 +117,7 @@ jobs:
         run: |
           echo "Test Coming Soon..."
       - name: Create Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Macos-x86_64
           path: ${{github.workspace}}/build/bin
@@ -143,7 +143,7 @@ jobs:
         run: |
           echo "Test Coming Soon..."
       - name: Create Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Macos-Arm64
           path: ${{github.workspace}}/build/bin
