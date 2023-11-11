@@ -18,7 +18,8 @@ class Game{
         int PosY;
         int Health;
 
-        uint16_t playerRotation = 0;
+		const char* GameTitle = "Eat-The-Mushroom Beta 5.X";
+		uint16_t playerRotation = 0;
         bool GameStarted;
 		bool GameRunning;
         void CreateWindow();

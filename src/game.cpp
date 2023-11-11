@@ -128,7 +128,7 @@ void Game::Gameloop(){
 void Game::CreateWindow(){
     SetTraceLogLevel(LOG_NONE);
     
-    InitWindow(800, 600, "Eat-the-Mushroom");
+    InitWindow(800, 600, GameTitle);
     
     // set the window icon
     icon = LoadImage("res/icon.png");
