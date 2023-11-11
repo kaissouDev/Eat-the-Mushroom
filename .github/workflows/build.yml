@@ -47,10 +47,17 @@ jobs:
     - name: Update Git submodules
       run: git submodule update --init --recursive
 
-    - name: Configure CMake
+    - name: Install MSYS2
+      run: |
+        choco install msys2
+        refreshenv
+        pacman --noconfirm -Syu
+
+    - name: Configure CMake with MSYS2
       run: |
         choco install ninja 
-        cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=FALSE -DCMAKE_C_COMPILER=C:/ProgramData/chocolatey/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/ProgramData/chocolatey/bin/g++.exe -G Ninja
+        cmake -B D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=FALSE -G Ninja
+      shell: bash
 
     - name: Build
       run: cmake --build D:\a\Eat-the-Mushroom\Eat-the-Mushroom/build --config Release
