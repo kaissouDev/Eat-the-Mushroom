@@ -51,8 +51,6 @@ jobs:
       run: |
         choco install msys2
         refreshenv
-        pacman --noconfirm -Syu
-
     - name: Configure CMake with MSYS2
       run: |
         choco install ninja 
